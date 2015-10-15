@@ -1,0 +1,16 @@
+{
+  "name": "seisafesta2015",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/seisahachioji/seisafesta2015.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/seisahachioji/seisafesta2015/issues"
+  },
+  "homepage": "https://github.com/seisahachioji/seisafesta2015",
+  "devDependencies": {
+    "bower": "^1.5.3"
+  }
+}

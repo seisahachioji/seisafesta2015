@@ -12,6 +12,7 @@ RUN curl -sL https://rpm.nodesource.com/setup_5.x | bash -
 RUN gpg --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3
 RUN wget https://get.rvm.io -O /tmp/rvm-installer.sh && chmod +x /tmp/rvm-installer.sh
 RUN /tmp/rvm-installer.sh --version latest stable
+RUN bash -l -c "rvm --default use --install 2.2@global"
 RUN bash -l -c 'rvm gemset install bundler'
 RUN bash -l -c 'rvm gemset install rake'
 

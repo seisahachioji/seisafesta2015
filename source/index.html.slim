@@ -1,0 +1,45 @@
+---
+layout: layout_main
+---
+- content_for :head
+  = stylesheet_link_tag 'index'
+
+- content_for :content
+  ruby:
+    sections = {
+      'news' => ['News', data.Contentful.News, '/article/', '/article/%s.html'],
+      'stage' => ['Stages', data.Contentful.Stage, '/stage/', '/stage/%s.html'],
+      'booth' => ['Boothes', data.Contentful.Booth, '/booth/', '/booth/%s.html']
+    }
+  - sections.keys.each do |prefix|
+    - section = sections[prefix]
+    section.index_section
+      div.mdl-grid
+        div.mdl-cell.mdl-cell--2-col
+        div.mdl-cell.mdl-cell--8-col
+          h3= section[0]
+        div.mdl-cell.mdl-cell--2-col
+      ruby:
+        card_first_key = 0
+        keys = section[1].keys.slice 0, ( prefix == 'news' ? 4 : 5 )
+      - if keys.length > 4 || prefix == 'news'
+        div.mdl-grid.index_big_card
+          div.mdl-cell.mdl-cell--3-col
+          div.mdl-cell.mdl-cell--6-col
+            = partial '/partials/_index_card', :locals => { :item => section[1][keys[0]], :section => section }
+          div.mdl-cell.mdl-cell--3-col
+      div.mdl-grid
+        div.mdl-cell.mdl-cell--2-col
+        - keys.each_with_index do |key, idx|
+          - next if prefix == 'news' || (keys.length > 4 && idx < 1)
+          div.mdl-cell.mdl-cell--2-col
+            = partial '/partials/_index_card', :locals => { :item => section[1][key], :section => section }
+        div.mdl-cell.mdl-cell--2-col
+      div.mdl-grid
+        div.mdl-cell.mdl-cell--2-col
+        div.mdl-cell.mdl-cell--4-col
+        div.mdl-cell.mdl-cell--4-col.index_section_readmore
+          a.mdl-button.mdl-js-button.mdl-button--primary.mdl-js-ripple-effect[href=url_for(section[2])]
+            span= 'READ MORE (%d)' % section[1].length
+            i.material-icons= 'navigate_next'
+        div.mdl-cell.mdl-cell--2-col

@@ -1,4 +1,4 @@
-task :init => [:init_bundle, :init_npm, :init_bower] do
+task :init => [:init_bundle, :init_npm, :init_bower, :init_contentful] do
 end
 
 task :init_bundle do
@@ -13,6 +13,14 @@ task :init_bower do
   puts system("`npm bin`/bower install") ? "OK" : "FAILED"
 end
 
+task :init_contentful do
+  puts system("bundle exec middleman contentful") ? "OK" : "FAILED"
+end
+
 task :build do
-  puts system("bundle exec middleman build --clean") ? "OK" : "FAILED"
+  puts system("bundle exec middleman build --clean --verbose") ? "OK" : "FAILED"
+end
+
+task :preview do
+  system 'bundle exec middleman server'
 end

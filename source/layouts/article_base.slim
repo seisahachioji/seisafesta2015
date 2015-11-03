@@ -1,0 +1,18 @@
+- content_for :head
+  = stylesheet_link_tag 'article_base'
+
+- content_for :content
+  div#article_base_ribbon.mdl-color--primary-dark
+    = yield_content :article_base_ribbon
+  div#article_base_container
+    div.mdl-grid
+      div.mdl-cell.mdl-cell--1-col
+      div.mdl-cell.mdl-cell--7-col.mdl-color--white.mdl-shadow--4dp#article_base_content_wrapper
+        div#article_base_content
+          = yield_content :article_base_content
+      div.mdl-cell.mdl-cell--3-col
+        div#article_base_menu
+          = yield_content :article_base_menu
+      div.mdl-cell.mdl-cell--1-col
+    = yield_content :article_base_after
+= wrap_layout :layout_sub

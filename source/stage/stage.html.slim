@@ -1,0 +1,20 @@
+---
+layout: stage_and_booth
+---
+- content_for :article_base_ribbon
+  div[style=('background-image: url('+stage.cover.url+');')]
+
+- content_for :stage_and_booth_title
+  = stage.title
+
+- content_for :stage_and_booth_content
+  = Tilt['markdown'].new { stage.body }.render
+
+- content_for :stage_and_booth_side_nav
+  - data.Contentful.Stage.each do |id, stage|
+    li
+      a.mdl-button.mdl-js-button.mdl-js-ripple-effect href=url_for('/stage/'+stage.title+'.html')
+        = stage.title
+
+- content_for :stage_and_booth_side_media
+  img src=( get_static_page('stage').cover.url )

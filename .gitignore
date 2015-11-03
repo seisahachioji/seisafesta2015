@@ -22,3 +22,6 @@ Gemfile.lock
 npm-debug.log
 /source/bower_components
 /node_modules
+
+.Contentful-space-hash
+/data/Contentful

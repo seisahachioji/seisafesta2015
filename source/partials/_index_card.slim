@@ -1,0 +1,8 @@
+div.mdl-card.mdl-shadow--2dp
+  div.mdl-card__media[style=('background-image: url(%s);' % item.cover.url)]
+  div.mdl-card__title
+    h4.mdl-card__title-text
+      a[href=url_for(section[3] % item.title)]= item.title
+  div.mdl-card__supporting-text
+    div
+      = strip_tags Tilt['markdown'].new { item.body }.render

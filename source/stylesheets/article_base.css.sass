@@ -1,0 +1,54 @@
+$ribbon-height: 40vh
+
+#article_base_container
+  position: relative
+  max-width: 1600px
+  margin: 0 auto
+
+#article_base_content,
+#article_base_menu
+  padding: 30px
+
+#article_base_content_wrapper
+  margin-top: -($ribbon-height / 2)
+
+#article_base_ribbon
+  height: $ribbon-height
+  position: relative
+  >*[style]
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background-position: center center
+    background-size: cover
+
+#article_base_content
+  img[src]:not([class])
+    display: block
+    width: 40%
+    height: auto
+    margin: 0 auto
+    box-shadow: 0 1px 1px rgba(0,0,0,.5)
+    border: solid 8px darken(white, 1%)
+
+#stage_nav
+  display: block
+  width: auto
+  height: auto
+  min-height: auto
+  ul, li, *.mdl-button
+    display: block
+    margin: 0
+    padding: 0
+  *.mdl-button
+    text-align: start
+    padding: 2px 16px
+  li:not(:last-child)
+    border-bottom: solid 1px rgba(0,0,0,.1)
+  .mdl-card__media
+    img
+      display: block
+      width: 100%
+      height: auto

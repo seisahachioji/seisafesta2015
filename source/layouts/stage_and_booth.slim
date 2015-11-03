@@ -1,0 +1,16 @@
+- content_for :article_base_content
+  div#hogehoge_mogemoge_fugafuga
+  section
+    header
+      h3
+        = yield_content :stage_and_booth_title
+    div
+      = yield_content :stage_and_booth_content
+
+- content_for :article_base_menu
+  nav.mdl-card.mdl-shadow--2dp#stage_nav
+    div.mdl-card__media
+      = yield_content :stage_and_booth_side_media
+    ul
+      = yield_content :stage_and_booth_side_nav
+= wrap_layout :article_base

@@ -1,0 +1,43 @@
+doctype html
+html
+  head
+    meta charset="utf-8"
+    meta name="viewport" content="initial-scale=1.0, width=device-width, minimum-scale=1.0"
+    = stylesheet_link_tag '/bower_components/material-design-lite/material.min.css', 'https://fonts.googleapis.com/icon?family=Material+Icons'
+    = javascript_include_tag '/bower_components/material-design-lite/material.min.js'
+    = stylesheet_link_tag 'layout'
+    = yield_content :head
+  body
+    div.mdl-layout.mdl-js-layout
+      = yield_content :layout
+      main.mdl-layout__content#main
+        = yield_content :content
+      footer.mdl-mega-footer
+        div.mdl-mega-footer__middle-section
+          div.mdl-mega-footer__drop-down-section
+            h1.mdl-mega-footer__heading= 'News'
+            ul.mdl-mega-footer__link-list
+              - data.Contentful.News.each do |id, news|
+                li
+                  a[href=url_for('/article/'+news.title+'.html')]= news.title
+          div.mdl-mega-footer__drop-down-section
+            h1.mdl-mega-footer__heading= 'Stage'
+            ul.mdl-mega-footer__link-list
+              - data.Contentful.Stage.each do |id, stage|
+                li
+                  a[href=url_for('/stage/'+stage.title+'.html')]= stage.title
+          div.mdl-mega-footer__drop-down-section
+            h1.mdl-mega-footer__heading= 'Booth'
+            ul.mdl-mega-footer__link-list
+              - data.Contentful.Booth.each do |id, booth|
+                li
+                  a[href=url_for('/booth/'+booth.title+'.html')]= booth.title
+        div.mdl-mega-footer__bottom-section
+          div.mdl-logo= 'Hoge'
+          ul.mdl-mega-footer__link-list
+            li
+              a= 'Moge'
+            li
+              a= 'Moge'
+            li
+              a= 'Moge'

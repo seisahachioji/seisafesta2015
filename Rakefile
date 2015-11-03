@@ -1,8 +1,15 @@
 task :init => [:init_bundle, :init_npm, :init_bower, :init_contentful] do
 end
 
+task :init_wercker => [:init_bundle_wercker, :init_npm, :init_bower] do
+end
+
 task :init_bundle do
   puts system("bundle install --path vendor/bundle") ? "OK" : "FAILED"
+end
+
+task :init_bundle_wercker do
+  puts system("bundle install") ? "OK" : "FAILED"
 end
 
 task :init_npm do

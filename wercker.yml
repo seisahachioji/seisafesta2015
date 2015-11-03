@@ -3,7 +3,7 @@ build:
   steps:
     - script:
       name: init
-      code: rake init
+      code: rake init_wercker
     - script:
       name: contentful
       code: rake init_contentful

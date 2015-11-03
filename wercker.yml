@@ -1,4 +1,4 @@
-box: phusion/passenger-ruby22
+box: s6464/seisafesta2015
 build:
   steps:
     - script:

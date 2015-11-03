@@ -4,6 +4,9 @@ end
 task :init_wercker => [:init_bundle_wercker, :init_npm, :init_bower] do
 end
 
+task :init_docker => [:init_bundle_wercker, :init_npm_docker] do
+end
+
 task :init_bundle do
   puts system("bundle install --path vendor/bundle") ? "OK" : "FAILED"
 end
@@ -16,8 +19,12 @@ task :init_npm do
   puts system("npm install") ? "OK" : "FAILED"
 end
 
+task :init_npm_docker do
+  puts system('npm install -g bower') ? 'OK' : 'FAILED'
+end
+
 task :init_bower do
-  puts system("`npm bin`/bower install") ? "OK" : "FAILED"
+  puts system("`npm bin`/bower --allow-root install") ? "OK" : "FAILED"
 end
 
 task :init_contentful do

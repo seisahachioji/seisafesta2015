@@ -8,6 +8,7 @@ RUN yum install -y git
 RUN yum groupinstall -y 'Development Tools'
 
 RUN curl -sL https://rpm.nodesource.com/setup_5.x | bash -
+RUN yum install -y nodejs
 
 RUN gpg --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3
 RUN wget https://get.rvm.io -O /tmp/rvm-installer.sh && chmod +x /tmp/rvm-installer.sh

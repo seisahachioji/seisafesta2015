@@ -1,4 +1,4 @@
-box: wercker/box-rvm
+box: wercker/rvm
 build:
   steps:
     - script:

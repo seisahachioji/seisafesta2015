@@ -1,6 +1,8 @@
 # seisafesta2015
 てきとう
 
+[![wercker status](https://app.wercker.com/status/4038d13862a18e99588a5d925f9812bb/m "wercker status")](https://app.wercker.com/project/bykey/4038d13862a18e99588a5d925f9812bb)
+
 ## 記事を書くひと用
 ことしはGitもMarkdownもWordPressすらわからない人でもギリギリできます  
 でも英語アレルギーはさすがにダメです

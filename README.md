@@ -39,5 +39,5 @@ rubyです。bundlerとかrakeとか、あとnpm、bowerは用意しといてね
 Werckerが勝手にやるのでヘタにいじらないでください
 
 ## なにかおかしくなったら
-[New issue](../..//issues) を書いて [@S64](github.com/S64) までくれるとひまなときに直します
+[New issue](../..//issues) を書いて [@S64](github.com/S64) までくれるとひまなときに直します  
 [New pull request](../../pulls) を書いてくれたら感動します

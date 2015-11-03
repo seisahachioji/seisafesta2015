@@ -1,0 +1,12 @@
+box: wercker/ruby
+build:
+  steps:
+    - script:
+      name: init
+      code: rake init
+    - script:
+      name: contentful
+      code: rake init_contentful
+    - script:
+      name: build
+      code: rake build

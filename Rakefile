@@ -8,33 +8,33 @@ task :init_docker => [:init_bundle_wercker, :init_npm_docker] do
 end
 
 task :init_bundle do
-  puts system("bundle install --path vendor/bundle") ? "OK" : "FAILED"
+  fail 'FAILED' unless system("bundle install --path vendor/bundle")
 end
 
 task :init_bundle_wercker do
-  puts system("bundle install") ? "OK" : "FAILED"
+  fail 'FAILED' unless system("bundle install")
 end
 
 task :init_npm do
-  puts system("npm install") ? "OK" : "FAILED"
+  fail 'FAILED' unless system("npm install")
 end
 
 task :init_npm_docker do
-  puts system('npm install -g bower') ? 'OK' : 'FAILED'
+  fail 'FAILED' unless system('npm install -g bower')
 end
 
 task :init_bower do
-  puts system("`npm bin`/bower --allow-root install") ? "OK" : "FAILED"
+  fail 'FAILED' unless system("`npm bin`/bower --allow-root install")
 end
 
 task :init_contentful do
-  puts system("bundle exec middleman contentful") ? "OK" : "FAILED"
+  fail 'FAILED' unless system("bundle exec middleman contentful")
 end
 
 task :build do
-  puts system("bundle exec middleman build --clean --verbose") ? "OK" : "FAILED"
+  fail 'FAILED' unless system("bundle exec middleman build --clean --verbose")
 end
 
 task :preview do
-  system 'bundle exec middleman server'
+  fail 'FAILED' unless system 'bundle exec middleman server'
 end

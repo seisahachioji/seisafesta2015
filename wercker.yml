@@ -1,4 +1,4 @@
-box: wercker/rvm
+box: phusion/passenger-ruby22
 build:
   steps:
     - script:

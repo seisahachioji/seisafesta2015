@@ -31,7 +31,7 @@ layout: layout_main
       div.mdl-grid
         div.mdl-cell.mdl-cell--2-col
         - keys.each_with_index do |key, idx|
-          - next if prefix == 'article' || (keys.length > 4 && idx < 1)
+          - next if idx < 1 && (keys.length > 4 || prefix == 'article')
           div.mdl-cell.mdl-cell--2-col
             = partial '/partials/_index_card', :locals => { :item => section[1][key], :section => section, :prefix => prefix }
         div.mdl-cell.mdl-cell--2-col

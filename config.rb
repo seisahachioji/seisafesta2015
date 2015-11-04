@@ -2,6 +2,10 @@ require "slim"
 
 ::Slim::Engine.set_options pretty: true, format: :html
 
+activate :i18n, :mount_at_root => :ja
+set :relative_links, true
+activate :relative_assets
+
 ###
 # Compass
 ###
@@ -11,8 +15,6 @@ compass_config do |config|
   config.output_style = :expanded
   config.line_comments = false
 end
-
-activate :i18n, :mount_at_root => :ja
 
 ###
 # Page options, layouts, aliases and proxies

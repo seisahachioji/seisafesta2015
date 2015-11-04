@@ -14,7 +14,7 @@ dependencies:
   override:
     - rake init_wercker
 
-test:
+compile:
   override:
     - rake init_contentful
     - rake build

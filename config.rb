@@ -137,8 +137,3 @@ helpers do
   def booth_url_for(booth); article_url_for 'booth',   booth.title; end
 
 end
-
-activate :deploy do |deploy|
-  deploy.deploy_method = :git
-  deploy.branch = 'gh-pages'
-end

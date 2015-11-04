@@ -40,15 +40,15 @@ task :preview do
 end
 
 task :deploy do
-  name = `git config --global --get user.name`
-  email = `git config --global --get user.email`
-  begin
-    fail 'FAILED' unless system 'git config --global user.name "CircleCI (Shuma Yoshioka)"'
-    fail 'FAILED' unless system 'git config --global user.email "s64.stdio+circleci@gmail.com"'
-    fail 'FAILED' unless system 'bundle exec middleman deploy'
-  rescue
-  ensure
-    system 'git config --global user.name %s' % name
-    system 'git config --global user.email %s' % email
-  end
+  #name = `git config --global --get user.name`
+  #email = `git config --global --get user.email`
+  #begin
+    #fail 'FAILED' unless system 'git config --global user.name "CircleCI (Shuma Yoshioka)"'
+    #fail 'FAILED' unless system 'git config --global user.email "s64.stdio+circleci@gmail.com"'
+    #fail 'FAILED' unless system 'bundle exec middleman deploy'
+  #rescue
+  #ensure
+    #system 'git config --global user.name %s' % name
+    #system 'git config --global user.email %s' % email
+  #end
 end

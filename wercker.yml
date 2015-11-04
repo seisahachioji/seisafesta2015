@@ -10,3 +10,9 @@ build:
     - script:
       name: build
       code: bash -lc 'rake build'
+deploy:
+  steps:
+    - lukevivier/gh-pages@0.2.1:
+      token: $GITHUB_TOKEN
+      basedir: ./build/
+      repo: seisahachioji/seisafesta2015

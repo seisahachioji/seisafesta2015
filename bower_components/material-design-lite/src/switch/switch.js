@@ -277,17 +277,6 @@
     this.element_.removeEventListener('mouseup', this.boundMouseUpHandler);
   };
 
-  /**
-   * Public alias for the downgrade method.
-   *
-   * @public
-   */
-  MaterialSwitch.prototype.mdlDowngrade =
-      MaterialSwitch.prototype.mdlDowngrade_;
-
-  MaterialSwitch.prototype['mdlDowngrade'] =
-      MaterialSwitch.prototype.mdlDowngrade;
-
   // The component registers itself. It can assume componentHandler is available
   // in the global scope.
   componentHandler.register({

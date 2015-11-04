@@ -91,7 +91,7 @@ componentHandler = (function() {
   /** @type {!Array<componentHandler.Component>} */
   var createdComponents_ = [];
 
-  var downgradeMethod_ = 'mdlDowngrade';
+  var downgradeMethod_ = 'mdlDowngrade_';
   var componentConfigProperty_ = 'mdlComponentConfigInternal_';
 
   /**

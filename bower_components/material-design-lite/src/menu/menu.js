@@ -125,15 +125,15 @@
       }
 
       var items = this.element_.querySelectorAll('.' + this.CssClasses_.ITEM);
-      this.boundItemKeydown_ = this.handleItemKeyboardEvent_.bind(this);
-      this.boundItemClick_ = this.handleItemClick_.bind(this);
+      this.boundItemKeydown = this.handleItemKeyboardEvent_.bind(this);
+      this.boundItemClick = this.handleItemClick_.bind(this);
       for (var i = 0; i < items.length; i++) {
         // Add a listener to each menu item.
-        items[i].addEventListener('click', this.boundItemClick_);
+        items[i].addEventListener('click', this.boundItemClick);
         // Add a tab index to each menu item.
         items[i].tabIndex = '-1';
         // Add a keyboard listener to each menu item.
-        items[i].addEventListener('keydown', this.boundItemKeydown_);
+        items[i].addEventListener('keydown', this.boundItemKeydown);
       }
 
       // Add ripple classes to each item, if the user has enabled ripples.
@@ -294,7 +294,7 @@
    * @private
    */
   MaterialMenu.prototype.handleItemClick_ = function(evt) {
-    if (evt.target.hasAttribute('disabled')) {
+    if (evt.target.getAttribute('disabled') !== null) {
       evt.stopPropagation();
     } else {
       // Wait some time before closing menu, so the user can see the ripple.
@@ -409,9 +409,7 @@
         // displayed the menu in the first place. If so, do nothing.
         // Also check to see if the menu is in the process of closing itself, and
         // do nothing in that case.
-        // Also check if the clicked element is a menu item
-        // if so, do nothing.
-        if (e !== evt && !this.closing_ && e.target.parentNode !== this.element_) {
+        if (e !== evt && !this.closing_) {
           document.removeEventListener('click', callback);
           this.hide();
         }
@@ -436,9 +434,8 @@
       }
 
       // Measure the inner element.
-      var rect = this.element_.getBoundingClientRect();
-      var height = rect.height;
-      var width = rect.width;
+      var height = this.element_.getBoundingClientRect().height;
+      var width = this.element_.getBoundingClientRect().width;
 
       // Turn on animation, and apply the final clip. Also make invisible.
       // This triggers the transitions.
@@ -475,21 +472,10 @@
     var items = this.element_.querySelectorAll('.' + this.CssClasses_.ITEM);
 
     for (var i = 0; i < items.length; i++) {
-      items[i].removeEventListener('click', this.boundItemClick_);
-      items[i].removeEventListener('keydown', this.boundItemKeydown_);
+      items[i].removeEventListener('click', this.boundItemClick);
+      items[i].removeEventListener('keydown', this.boundItemKeydown);
     }
   };
-
-  /**
-   * Public alias for the downgrade method.
-   *
-   * @public
-   */
-  MaterialMenu.prototype.mdlDowngrade =
-      MaterialMenu.prototype.mdlDowngrade_;
-
-  MaterialMenu.prototype['mdlDowngrade'] =
-      MaterialMenu.prototype.mdlDowngrade;
 
   // The component registers itself. It can assume componentHandler is available
   // in the global scope.

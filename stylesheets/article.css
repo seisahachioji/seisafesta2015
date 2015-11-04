@@ -1,0 +1,15 @@
+#article_base_menu .mdl-card {
+  width: auto;
+}
+#article_base_menu .mdl-card .mdl-card__title {
+  padding-bottom: 0;
+}
+#article_base_menu .mdl-card .mdl-card__media img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+#article_base_menu .mdl-card .mdl-card__supporting-text > p {
+  padding: 0;
+  margin-bottom: 8px;
+}

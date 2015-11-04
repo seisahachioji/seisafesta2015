@@ -1,0 +1,12 @@
+#items_body .mdl-card {
+  width: auto;
+}
+#items_body .mdl-card__title h4 {
+  margin: 0;
+}
+#items_body .mdl-card__media {
+  height: 192px;
+}
+#items_body .mdl-card__supporting-text {
+  height: 5em;
+}

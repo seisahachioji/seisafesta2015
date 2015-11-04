@@ -1,0 +1,28 @@
+.index_section .index_section_readmore {
+  text-align: end;
+}
+.index_section .mdl-card {
+  width: auto;
+  min-height: 300px;
+}
+.index_section .mdl-card .mdl-card__supporting-text {
+  width: auto;
+  padding-top: 0;
+}
+.index_section .mdl-card .mdl-card__supporting-text > div {
+  min-height: 5em;
+  overflow: hidden;
+}
+.index_section .mdl-card .mdl-card__media {
+  height: 112px;
+  background-size: cover;
+  background-position: center center;
+}
+.index_section .mdl-card a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.index_big_card .mdl-card .mdl-card__media {
+  height: 192px;
+}

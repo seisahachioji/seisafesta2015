@@ -1,7 +1,7 @@
 # seisafesta2015
 てきとう
 
-[![wercker status](https://app.wercker.com/status/4038d13862a18e99588a5d925f9812bb/m "wercker status")](https://app.wercker.com/project/bykey/4038d13862a18e99588a5d925f9812bb)
+[![Circle CI](https://circleci.com/gh/seisahachioji/seisafesta2015/tree/master.svg?style=svg)](https://circleci.com/gh/seisahachioji/seisafesta2015/tree/master)
 
 ## 記事を書くひと用
 ことしはGitもMarkdownもWordPressすらわからない人でもギリギリできます  
@@ -15,7 +15,7 @@
 ### きじのかきかた
 1. Entries -> Add New Entry -> News
 2. wysiwygなエディタで書いたりすると
-3. そのうちビルドされます
+3. そのうちCircleCIでビルドされます
 
 ## コードいじるひと用
 ことしもMiddlemanです  
@@ -38,7 +38,13 @@ rubyです。bundlerとかrakeとか、あとnpm、bowerは用意しといてね
 2. `open ./build/index.html`
 
 ### 更新を反映する
-Werckerが勝手にやるのでヘタにいじらないでください
+CircleCIが勝手にやるので基本いじらないでください
+更新されるタイミングは
+
+- masterのコードが変わった
+- Contentfulでなにか変更があった
+
+などです
 
 ## なにかおかしくなったら
 - [@shuma_yoshioka](https://twitter.com/shuma_yoshioka) にツイートすると気分がノッてる時に読みます  

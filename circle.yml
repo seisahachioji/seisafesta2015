@@ -18,6 +18,10 @@ dependencies:
   override:
     - rake init_circleci
 
+test:
+  override:
+    - ruby -c ./config.rb
+
 compile:
   override:
     - rake init_contentful

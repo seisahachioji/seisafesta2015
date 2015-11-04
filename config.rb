@@ -98,16 +98,18 @@ activate :contentful do |f|
 end
 
 ready do
-  data.Contentful.Stage.each do |id, stage|
-    proxy "/stage/#{stage.title}.html", "stage/stage.html", :locals => { stage: stage }, ignore: true
-  end
+  if contentful = data.try(:Contentful)
+    contentful.Stage.try(:each) do |id, stage|
+      proxy "/stage/#{stage.title}.html", "stage/stage.html", :locals => { stage: stage }, ignore: true
+    end
 
-  data.Contentful.Booth.each do |id, booth|
-    proxy "/booth/#{booth.title}.html", "booth/booth.html", :locals => { booth: booth }, ignore: true
-  end
+    contentful.Booth.try(:each) do |id, booth|
+        proxy "/booth/#{booth.title}.html", "booth/booth.html", :locals => { booth: booth }, ignore: true
+    end
 
-  data.Contentful.News.each do |id, news|
-    proxy "/article/#{news.title}.html", "article/article.html", :locals => { article: news }, ignore: true
+    contentful.News.try(:each) do |id, news|
+      proxy "/article/#{news.title}.html", "article/article.html", :locals => { article: news }, ignore: true
+    end
   end
 end
 

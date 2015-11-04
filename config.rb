@@ -3,8 +3,8 @@ require "slim"
 ::Slim::Engine.set_options pretty: true, format: :html
 
 activate :i18n, :mount_at_root => :ja
-set :relative_links, true
 activate :relative_assets
+set :relative_links, true
 
 ###
 # Compass
@@ -116,6 +116,7 @@ ready do
 end
 
 helpers do
+
   def get_static_pages
     pages = {}
     data.Contentful.StaticPage.each do |id, page|
@@ -125,4 +126,14 @@ helpers do
   end
 
   def get_static_page(key); get_static_pages[key]; end
+
+  def article_url_for(prefix, id)
+    idx = '/%s/index.html' % prefix
+    url_for(idx, {:relative => true, :current_resource => current_resource}) + ('%s.html' % id)
+  end
+
+  def stage_url_for(stage); article_url_for 'stage',   stage.title; end
+  def news_url_for(news);   article_url_for 'article', news.title;  end
+  def booth_url_for(booth); article_url_for 'booth',   booth.title; end
+
 end

@@ -19,19 +19,19 @@ html
             ul.mdl-mega-footer__link-list
               - data.Contentful.News.each do |id, news|
                 li
-                  a[href=url_for('/article/'+news.title+'.html')]= news.title
+                  a[href=news_url_for(news)]= news.title
           div.mdl-mega-footer__drop-down-section
             h1.mdl-mega-footer__heading= 'Stage'
             ul.mdl-mega-footer__link-list
               - data.Contentful.Stage.each do |id, stage|
                 li
-                  a[href=url_for('/stage/'+stage.title+'.html')]= stage.title
+                  a[href=stage_url_for(stage)]= stage.title
           div.mdl-mega-footer__drop-down-section
             h1.mdl-mega-footer__heading= 'Booth'
             ul.mdl-mega-footer__link-list
               - data.Contentful.Booth.each do |id, booth|
                 li
-                  a[href=url_for('/booth/'+booth.title+'.html')]= booth.title
+                  a[href=booth_url_for(booth)]= booth.title
         div.mdl-mega-footer__bottom-section
           div.mdl-logo= 'Hoge'
           ul.mdl-mega-footer__link-list

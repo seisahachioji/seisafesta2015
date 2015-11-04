@@ -1,0 +1,22 @@
+general:
+  branches:
+    ignore:
+      - gh-pages
+
+machine:
+  timezone: Asia/Tokyo
+
+dependencies:
+  override:
+    - rake init_wercker
+
+test:
+  override:
+    - rake init_contentful
+    - rake build
+
+deployment:
+  gh-pages:
+    branch: master
+    commands:
+      - rake deploy

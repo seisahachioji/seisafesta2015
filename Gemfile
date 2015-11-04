@@ -15,3 +15,4 @@ gem "tzinfo-data", platforms: [:mswin, :mingw, :jruby]
 
 gem 'slim', '~> 3.0.6'
 gem 'contentful_middleman', '~> 1.1.1'
+gem 'middleman-deploy', '~> 1.0'

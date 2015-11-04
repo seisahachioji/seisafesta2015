@@ -38,3 +38,9 @@ end
 task :preview do
   fail 'FAILED' unless system 'bundle exec middleman server'
 end
+
+task :deploy do
+  fail 'FAILED' unless system 'git config --global user.name "CircleCI (Shuma Yoshioka)"'
+  fail 'FAILED' unless system 'git config --global user.email "s64.stdio+circleci@gmail.com"'
+  fail 'FAILED' unless system 'bundle exec middleman deploy'
+end

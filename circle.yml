@@ -11,8 +11,12 @@ machine:
     version: 4.1.0
 
 dependencies:
+  cache_directories:
+    - vendor/bundle
+    - source/bower_components
+    - node_modules
   override:
-    - rake init_wercker
+    - rake init_circleci
 
 compile:
   override:

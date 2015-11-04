@@ -7,6 +7,9 @@ end
 task :init_docker => [:init_bundle_wercker, :init_npm_docker] do
 end
 
+task :init_circleci => [:init_bundle, :init_npm, :init_bower] do
+end
+
 task :init_bundle do
   fail 'FAILED' unless system("bundle install --path vendor/bundle")
 end

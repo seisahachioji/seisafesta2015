@@ -25,3 +25,6 @@ npm-debug.log
 
 .Contentful-space-hash
 /data/Contentful
+
+/id_rsa
+/id_rsa.pub

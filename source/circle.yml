@@ -1,4 +1,8 @@
 general:
   branches:
-    ignore:
+    only:
       - gh-pages
+
+test:
+  override:
+    - sh -c 'exit 0'

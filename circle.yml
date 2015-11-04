@@ -5,6 +5,10 @@ general:
 
 machine:
   timezone: Asia/Tokyo
+  ruby:
+    version: 2.2
+  node:
+    version: 4.1.0
 
 dependencies:
   override:

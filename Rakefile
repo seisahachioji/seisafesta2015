@@ -32,6 +32,11 @@ task :init_contentful do
 end
 
 task :build do
+  FileUtils.rm_rf './build/'
+  system 'git clone --branch "gh-pages" "https://github.com/seisahachioji/seisafesta2015.git" build/'
+  Dir.chdir './build' do
+    system 'git rm -rf ./*'
+  end
   fail 'FAILED' unless system("bundle exec middleman build --clean --verbose")
 end
 
@@ -40,15 +45,21 @@ task :preview do
 end
 
 task :deploy do
-  #name = `git config --global --get user.name`
-  #email = `git config --global --get user.email`
-  #begin
-    #fail 'FAILED' unless system 'git config --global user.name "CircleCI (Shuma Yoshioka)"'
-    #fail 'FAILED' unless system 'git config --global user.email "s64.stdio+circleci@gmail.com"'
-    #fail 'FAILED' unless system 'bundle exec middleman deploy'
-  #rescue
-  #ensure
-    #system 'git config --global user.name %s' % name
-    #system 'git config --global user.email %s' % email
-  #end
+  name  = `git config --global --get user.name`
+  email = `git config --global --get user.email`
+  begin
+    Dir.chdir './build/' do
+      fail 'FAILED' unless system 'git config --global user.name "CircleCI (Shuma Yoshioka)"'
+      fail 'FAILED' unless system 'git config --global user.email "s64.stdio+circleci@gmail.com"'
+
+      fail 'FAILED' unless system 'git checkout "gh-pages"'
+      fail 'FAILED' unless system 'git add -A'
+      fail 'FAILED' unless system 'git commit -m "Update"'
+      fail 'FAILED' unless system 'git push'
+    end
+  rescue
+  ensure
+    system 'git config --global user.name %s' % name
+    system 'git config --global user.email %s' % email
+  end
 end

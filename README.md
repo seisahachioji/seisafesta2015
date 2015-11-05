@@ -32,6 +32,9 @@ rubyです。bundlerとかrakeとか、あとnpm、bowerは用意しといてね
 3. `rake preview`
 4. `open http://127.0.0.1:4567/`
 
+環境汚すのがイヤだったら、[置いてあるDockerfile](./Dockerfile) を活用しましょう。  
+Wercker用に書いたやつなので、このままでは動きません。
+
 ### Contentfulが変わったら
 1. `rake init_contentful`
 2. `rake preview`

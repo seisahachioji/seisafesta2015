@@ -7,10 +7,7 @@
       //h4= data.static.title.sub
     div.mdl-layout__header-row
     div.mdl-layout__header-row.mdl-color--primary-dark
-      nav.mdl-navigation
-        - data.Contentful.MenuItem.each do |key, item|
-          a.mdl-navigation__link[href=item.href data-order=item.order]
-            = item.title
+      = partial '/partials/_navigation'
       div.mdl-layout-spacer
       a.mdl-button.mdl-js-button.mdl-button--icon
         i.material-icons= 'code'

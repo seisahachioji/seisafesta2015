@@ -102,7 +102,7 @@ end
 ready do
   if contentful = data.try(:Contentful)
     contentful.Stage.try(:each) do |id, stage|
-      proxy "/stage/#{stage.title}.html", "stage/stage.html", :locals => { stage: stage }, ignore: true
+      proxy "/stage/#{stage.slug}.html", "stage/stage.html", :locals => { stage: stage }, ignore: true
     end
 
     contentful.Booth.try(:each) do |id, booth|
@@ -132,9 +132,19 @@ helpers do
     url_for(idx, {:relative => true, :current_resource => current_resource}) + ('%s.html' % id)
   end
 
-  def stage_url_for(stage); article_url_for 'stage',   stage.title; end
-  def news_url_for(news);   article_url_for 'article', news.title;  end
-  def booth_url_for(booth); article_url_for 'booth',   booth.title; end
+  def default_article_url_for(prefix, item)
+    id = nil
+    if item.key? 'slug'
+      id = item.slug
+    else
+      id = item.title
+    end
+    article_url_for prefix, id
+  end
+
+  def stage_url_for(stage); default_article_url_for 'stage',   stage; end
+  def news_url_for(news);   default_article_url_for 'article', news;  end
+  def booth_url_for(booth); default_article_url_for 'booth',   booth; end
 
   def get_sorted_items(items, key)
     sortedKeys = items.keys.sort do |aKey, bKey|

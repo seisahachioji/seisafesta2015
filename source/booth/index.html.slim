@@ -3,8 +3,8 @@ layout: items
 static_key: booth
 ---
 - content_for :items_body
-  - data.Contentful.Booth.keys.each_slice(2) do |row|
+  - sorted_boothes.each_slice(2) do |row|
     div.mdl-grid
-      - row.each do |key|
+      - row.each do |item|
         div.mdl-cell.mdl-cell--6-col
-          = partial '/partials/_items_card', :locals => { :item => data.Contentful.Booth[key] }
+          = partial '/partials/_items_card', :locals => { :item => item }

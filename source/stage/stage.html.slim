@@ -11,7 +11,7 @@ layout: stage_and_booth
   = Tilt['markdown'].new { stage.body }.render
 
 - content_for :stage_and_booth_side_nav
-  - data.Contentful.Stage.each do |id, stage|
+  - sorted_stages.each do |stage|
     li
       a.mdl-button.mdl-js-button.mdl-js-ripple-effect href=stage_url_for(stage)
         = stage.title

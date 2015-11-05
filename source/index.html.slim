@@ -15,31 +15,31 @@ layout: layout_main
     - section = sections[prefix]
     section.index_section
       div.mdl-grid
-        div.mdl-cell.mdl-cell--2-col
+        div.mdl-cell.mdl-cell--2-col.mdl-cell--hide-tablet.mdl-cell--hide-phone
         div.mdl-cell.mdl-cell--8-col
           h3= section[0]
-        div.mdl-cell.mdl-cell--2-col
+        div.mdl-cell.mdl-cell--2-col.mdl-cell--hide-tablet.mdl-cell--hide-phone
       ruby:
         card_first_key = 0
         items = section[1].slice 0, ( prefix == 'article' ? 4 : 5 )
       - if items.length > 4 || prefix == 'article'
         div.mdl-grid.index_big_card
-          div.mdl-cell.mdl-cell--3-col
+          div.mdl-cell.mdl-cell--3-col.mdl-cell--hide-tablet.mdl-cell--hide-phone
           div.mdl-cell.mdl-cell--6-col
             = partial '/partials/_index_card', :locals => { :item => items[0], :section => section, :prefix => prefix }
-          div.mdl-cell.mdl-cell--3-col
+          div.mdl-cell.mdl-cell--3-col.mdl-cell--hide-tablet.mdl-cell--hide-phone
       div.mdl-grid
-        div.mdl-cell.mdl-cell--2-col
+        div.mdl-cell.mdl-cell--2-col.mdl-cell--hide-tablet.mdl-cell--hide-phone
         - items.each_with_index do |item, idx|
           - next if idx < 1 && (items.length > 4 || prefix == 'article')
-          div.mdl-cell.mdl-cell--2-col
+          div.mdl-cell.mdl-cell--2-col.mdl-cell--4-col-phone
             = partial '/partials/_index_card', :locals => { :item => item, :section => section, :prefix => prefix }
-        div.mdl-cell.mdl-cell--2-col
+        div.mdl-cell.mdl-cell--2-col.mdl-cell--hide-tablet.mdl-cell--hide-phone
       div.mdl-grid
-        div.mdl-cell.mdl-cell--2-col
+        div.mdl-cell.mdl-cell--2-col.mdl-cell--hide-tablet.mdl-cell--hide-phone
         div.mdl-cell.mdl-cell--4-col
         div.mdl-cell.mdl-cell--4-col.index_section_readmore
           a.mdl-button.mdl-js-button.mdl-button--primary.mdl-js-ripple-effect[href=url_for(section[2])]
             span= 'READ MORE (%d)' % section[1].length
             i.material-icons= 'navigate_next'
-        div.mdl-cell.mdl-cell--2-col
+        div.mdl-cell.mdl-cell--2-col.mdl-cell--hide-tablet.mdl-cell--hide-phone

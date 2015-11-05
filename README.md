@@ -3,6 +3,9 @@
 
 [![Circle CI](https://circleci.com/gh/seisahachioji/seisafesta2015/tree/master.svg?style=svg)](https://circleci.com/gh/seisahachioji/seisafesta2015/tree/master)
 
+## みるひと
+[こ↑こ↓](http://seisahachioji.github.io/seisafesta2015/)
+
 ## 記事を書くひと用
 ことしはGitもMarkdownもWordPressすらわからない人でもギリギリできます  
 でも英語アレルギーはさすがにダメです

@@ -5,6 +5,10 @@
 
 - content_for :head
   = stylesheet_link_tag 'items'
+
+- content_for :article_base_ribbon
+  div[style=('background-image: url('+static_page.cover.url+');')]
+
 - content_for :article_base_after
   div.mdl-grid#items_body
     div.mdl-cell.mdl-cell--1-col

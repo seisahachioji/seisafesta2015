@@ -136,4 +136,24 @@ helpers do
   def news_url_for(news);   article_url_for 'article', news.title;  end
   def booth_url_for(booth); article_url_for 'booth',   booth.title; end
 
+  def get_sorted_items(items, key)
+    sortedKeys = items.keys.sort do |aKey, bKey|
+      a = items[aKey]
+      b = items[bKey]
+
+      unless a[key] || b[key] then; next 0; end;
+
+      if key == 'timestamp'
+        next TimeWithZone.iso8601(a[key]).to_i <=> TimeWithZone.iso8601(b[key]).to_i
+      else
+        next a[key] <=> b[key]
+      end
+    end
+    ret = []
+    sortedKeys.each do |sKey|
+      ret.push items[sKey]
+    end
+    return ret
+  end
+
 end

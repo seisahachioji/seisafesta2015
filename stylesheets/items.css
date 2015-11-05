@@ -4,6 +4,10 @@
 #items_body .mdl-card__title h4 {
   margin: 0;
 }
+#items_body .mdl-card__title a {
+  color: inherit;
+  text-decoration: inherit;
+}
 #items_body .mdl-card__media {
   height: 192px;
 }

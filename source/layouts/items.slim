@@ -1,5 +1,8 @@
 - static_page = get_static_page current_page.data.static_key
 
+- content_for :title
+  = static_page.title
+
 - content_for :head
   = stylesheet_link_tag 'items'
 - content_for :article_base_after

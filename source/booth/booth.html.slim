@@ -4,6 +4,9 @@ layout: stage_and_booth
 - content_for :article_base_ribbon
   div[style=('background-image: url('+booth.cover.url+');')]
 
+- content_for :title
+  = booth.title
+
 - content_for :stage_and_booth_title
   = booth.title
 

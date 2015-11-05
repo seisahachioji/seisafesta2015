@@ -4,6 +4,10 @@ layout: article_base
 - content_for :head
   = stylesheet_link_tag 'article'
 
+- content_for :title
+  = article.title
+
+
 - content_for :article_base_content do
   article
     header

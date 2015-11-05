@@ -7,6 +7,8 @@ html
     = javascript_include_tag '/bower_components/material-design-lite/material.min.js'
     = stylesheet_link_tag 'layout'
     = yield_content :head
+    title
+      = yield_content :title
   body
     div.mdl-layout.mdl-js-layout
       = yield_content :layout

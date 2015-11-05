@@ -4,5 +4,13 @@
 @media (max-device-width: 1024px)
   .mdl-layout__header
     display: block !important
+    .mdl-layout__header-row
+      padding: 0
+  .mdl-layout__header--scroll
+    >*:not(:last-child)
+      display: none !important
+    >*:last-child
+      >*:not(.mdl-navigation)
+        display: none
   #main
     overflow: visible !important

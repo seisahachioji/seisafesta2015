@@ -166,9 +166,9 @@ helpers do
     return ret
   end
 
-  def sorted_newses();  get_sorted_items(data.Contentful.News,  'timestamp').reverse; end;
-  def sorted_boothes(); get_sorted_items(data.Contentful.Booth,  'timestamp').reverse; end;
-  def sorted_stages();  get_sorted_items(data.Contentful.Stage,  'timestamp').reverse; end;
-  def sorted_navs();    get_sorted_items(data.Contentful.MenuItem, 'order'); end;
+  def sorted_newses(); get_sorted_items(data.Contentful.News,  'timestamp').reverse; end;
+  def sorted_booths(); get_sorted_items(data.Contentful.Booth,  'timestamp').reverse; end;
+  def sorted_stages(); get_sorted_items(data.Contentful.Stage,  'timestamp').reverse; end;
+  def sorted_navs();   get_sorted_items(data.Contentful.MenuItem, 'order'); end;
 
 end

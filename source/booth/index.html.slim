@@ -3,7 +3,7 @@ layout: items
 static_key: booth
 ---
 - content_for :items_body
-  - sorted_boothes.each_slice(2) do |row|
+  - sorted_booths.each_slice(2) do |row|
     div.mdl-grid
       - row.each do |item|
         div.mdl-cell.mdl-cell--6-col

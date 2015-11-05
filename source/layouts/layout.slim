@@ -31,7 +31,7 @@ html
           div.mdl-mega-footer__drop-down-section
             h1.mdl-mega-footer__heading= 'Booth'
             ul.mdl-mega-footer__link-list
-              - sorted_boothes.each do |booth|
+              - sorted_booths.each do |booth|
                 li
                   a[href=booth_url_for(booth)]= booth.title
         /

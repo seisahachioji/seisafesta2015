@@ -7,4 +7,4 @@ static_key: stage
     div.mdl-grid
       - row.each do |item|
         div.mdl-cell.mdl-cell--6-col
-          = partial '/partials/_items_card', :locals => { :item => item }
+          = partial '/partials/_items_card', :locals => { :item => item, :prefix => 'stage' }

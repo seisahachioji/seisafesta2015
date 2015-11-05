@@ -2,7 +2,7 @@
   position: relative;
 }
 
-@media (max-device-width: 1024px) {
+@media (max-width: 1024px) {
   .mdl-layout__header {
     display: block !important;
   }
@@ -17,7 +17,7 @@
     display: none;
   }
 
-  #main {
+  .mdl-layout__content {
     overflow: visible !important;
   }
 }

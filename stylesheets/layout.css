@@ -1,3 +1,13 @@
 #main {
   position: relative;
 }
+
+@media (max-device-width: 1024px) {
+  .mdl-layout__header {
+    display: block !important;
+  }
+
+  #main {
+    overflow: visible !important;
+  }
+}

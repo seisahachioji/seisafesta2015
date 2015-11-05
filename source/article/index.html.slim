@@ -1,3 +1,10 @@
 ---
-layout: article_base
+layout: items
+static_key: news
 ---
+- content_for :items_body
+  - data.Contentful.News.keys.each_slice(2) do |row|
+    div.mdl-grid
+      - row.each do |key|
+        div.mdl-cell.mdl-cell--6-col
+          = partial '/partials/_items_card', :locals => { :item => data.Contentful.News[key] }

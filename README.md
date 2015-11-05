@@ -41,13 +41,21 @@ rubyです。bundlerとかrakeとか、あとnpm、bowerは用意しといてね
 2. `open ./build/index.html`
 
 ### 更新を反映する
-CircleCIが勝手にやるので基本いじらないでください
+CircleCIが勝手にやるので基本いじらないでください  
 更新されるタイミングは
 
 - masterのコードが変わった
 - Contentfulでなにか変更があった
 
-などです
+などです。
+
+CircleCIがおかしいなど、どうしても更新したい場合には
+
+1. `rake build`
+2. `rake deploy`
+
+で できるにはできます。  
+環境によってビミョーに動作違ったりするので、基本オススメしません。
 
 ## なにかおかしくなったら
 - [@shuma_yoshioka](https://twitter.com/shuma_yoshioka) にツイートすると気分がノッてる時に読みます  

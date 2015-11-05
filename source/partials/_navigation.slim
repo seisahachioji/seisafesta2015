@@ -1,4 +1,4 @@
 nav.mdl-navigation
-  - get_sorted_items(data.Contentful.MenuItem, 'order').each do |item|
+  - sorted_navs.each do |item|
     a.mdl-navigation__link[href=url_for(item.href) data-order=item.order]
       = item.title

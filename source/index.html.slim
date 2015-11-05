@@ -7,9 +7,9 @@ layout: layout_main
 - content_for :content
   ruby:
     sections = {
-      'article' => ['News', data.Contentful.News, '/article/index.html', '/article/%s.html'],
-      'stage'   => ['Stages', data.Contentful.Stage, '/stage/index.html', '/stage/%s.html'],
-      'booth'   => ['Boothes', data.Contentful.Booth, '/booth/index.html', '/booth/%s.html']
+      'article' => ['News',    sorted_newses,  '/article/index.html', '/article/%s.html'],
+      'stage'   => ['Stages',  sorted_stages,  '/stage/index.html',   '/stage/%s.html'],
+      'booth'   => ['Boothes', sorted_boothes, '/booth/index.html',   '/booth/%s.html']
     }
   - sections.keys.each do |prefix|
     - section = sections[prefix]
@@ -21,19 +21,19 @@ layout: layout_main
         div.mdl-cell.mdl-cell--2-col
       ruby:
         card_first_key = 0
-        keys = section[1].keys.slice 0, ( prefix == 'article' ? 4 : 5 )
-      - if keys.length > 4 || prefix == 'article'
+        items = section[1].slice 0, ( prefix == 'article' ? 4 : 5 )
+      - if items.length > 4 || prefix == 'article'
         div.mdl-grid.index_big_card
           div.mdl-cell.mdl-cell--3-col
           div.mdl-cell.mdl-cell--6-col
-            = partial '/partials/_index_card', :locals => { :item => section[1][keys[0]], :section => section, :prefix => prefix }
+            = partial '/partials/_index_card', :locals => { :item => items[0], :section => section, :prefix => prefix }
           div.mdl-cell.mdl-cell--3-col
       div.mdl-grid
         div.mdl-cell.mdl-cell--2-col
-        - keys.each_with_index do |key, idx|
-          - next if idx < 1 && (keys.length > 4 || prefix == 'article')
+        - items.each_with_index do |item, idx|
+          - next if idx < 1 && (items.length > 4 || prefix == 'article')
           div.mdl-cell.mdl-cell--2-col
-            = partial '/partials/_index_card', :locals => { :item => section[1][key], :section => section, :prefix => prefix }
+            = partial '/partials/_index_card', :locals => { :item => item, :section => section, :prefix => prefix }
         div.mdl-cell.mdl-cell--2-col
       div.mdl-grid
         div.mdl-cell.mdl-cell--2-col

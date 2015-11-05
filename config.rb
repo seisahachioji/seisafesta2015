@@ -144,7 +144,7 @@ helpers do
       unless a[key] || b[key] then; next 0; end;
 
       if key == 'timestamp'
-        next TimeWithZone.iso8601(a[key]).to_i <=> TimeWithZone.iso8601(b[key]).to_i
+        next a[key].to_time.to_i <=> b[key].to_time.to_i
       else
         next a[key] <=> b[key]
       end
@@ -155,5 +155,10 @@ helpers do
     end
     return ret
   end
+
+  def sorted_newses();  get_sorted_items(data.Contentful.News,  'timestamp').reverse; end;
+  def sorted_boothes(); get_sorted_items(data.Contentful.Booth,  'timestamp').reverse; end;
+  def sorted_stages();  get_sorted_items(data.Contentful.Stage,  'timestamp').reverse; end;
+  def sorted_navs();    get_sorted_items(data.Contentful.MenuItem, 'order'); end;
 
 end

@@ -106,11 +106,11 @@ ready do
     end
 
     contentful.Booth.try(:each) do |id, booth|
-        proxy "/booth/#{booth.title}.html", "booth/booth.html", :locals => { booth: booth }, ignore: true
+        proxy "/booth/#{booth.slug}.html", "booth/booth.html", :locals => { booth: booth }, ignore: true
     end
 
     contentful.News.try(:each) do |id, news|
-      proxy "/article/#{news.title}.html", "article/article.html", :locals => { article: news }, ignore: true
+      proxy "/article/#{news.slug}.html", "article/article.html", :locals => { article: news }, ignore: true
     end
   end
 end

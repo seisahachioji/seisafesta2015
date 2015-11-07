@@ -5,20 +5,20 @@ layout: stage_and_booth
   div[style=('background-image: url(%s);' % stage.cover.try(:[],:url))]
 
 - content_for :title
-  = stage.title
+  = stage.title || ''
 
 
 - content_for :stage_and_booth_title
-  = stage.title
+  = stage.title || ''
 
 - content_for :stage_and_booth_content
-  = Tilt['markdown'].new { stage.body }.render
+  = Tilt['markdown'].new { stage.body || '' }.render
 
 - content_for :stage_and_booth_side_nav
   - sorted_stages.each do |stage|
     li
       a.mdl-button.mdl-js-button.mdl-js-ripple-effect href=stage_url_for(stage)
-        = stage.title
+        = stage.title || ''
 
 - content_for :stage_and_booth_side_media
   img src=(get_static_page('stage').cover.try(:[],:url))

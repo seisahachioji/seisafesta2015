@@ -3,6 +3,6 @@ div.mdl-card.mdl-shadow--2dp
   div.mdl-card__title
     div.mdl-card__title-text
       h4
-        a[href=default_article_url_for(prefix, item)]= item.title
+        a[href=default_article_url_for(prefix, item)]= item.title || ''
   div.mdl-card__supporting-text
-    = strip_tags Tilt['markdown'].new { item.body }.render
+    = strip_tags Tilt['markdown'].new { item.body || '' }.render

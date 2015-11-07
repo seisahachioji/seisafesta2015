@@ -1,7 +1,7 @@
 - static_page = get_static_page current_page.data.static_key
 
 - content_for :title
-  = static_page.title
+  = static_page.title || ''
 
 - content_for :head
   = stylesheet_link_tag 'items'
@@ -18,8 +18,8 @@
     div.mdl-cell.mdl-cell--1-col
 - content_for :article_base_content
   h3
-    = static_page.title
+    = static_page.title || ''
     = yield_content :items_title
   div
-    = Tilt['markdown'].new { static_page.body }.render
+    = Tilt['markdown'].new { static_page.body || '' }.render
 = wrap_layout :article_base

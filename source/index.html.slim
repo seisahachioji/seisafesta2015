@@ -10,8 +10,8 @@ layout: layout_main
 - content_for :content
   ruby:
     sections = {
-      'article' => ['News',    sorted_newses,  '/article/index.html', '/article/%s.html'],
-      'stage'   => ['Stages',  sorted_stages,  '/stage/index.html',   '/stage/%s.html'],
+      'article' => ['News',   sorted_newses, '/article/index.html', '/article/%s.html'],
+      'stage'   => ['Stages', sorted_stages, '/stage/index.html',   '/stage/%s.html'],
       'booth'   => ['Booths', sorted_booths, '/booth/index.html',   '/booth/%s.html']
     }
   - sections.keys.each do |prefix|

@@ -6,6 +6,23 @@
 ## とりあえずサイトを見る
 - [こ↑こ↓](http://seisahachioji.github.io/seisafesta2015/)
 
+## ユースフル☆リンクス
+- [gh-pages - GitHub](https://github.com/seisahachioji/seisafesta2015/commits/gh-pages)
+  - サイトの変化を追えます
+- [Circle CI](https://circleci.com/gh/seisahachioji/seisafesta2015/tree/master)
+  - 記事が増えたり変更されるとここでビルドされます。
+  - 自分の更新がいつ反映されるか知りたい時とか、
+  - いつになっても反映されないとか、
+  - 不具合の原因を追う時は
+  - まずここを見ること。
+- [Contentful](https://app.contentful.com/spaces/culruq1g10hg)
+  - ロジック部分以外は全部ここです
+  - 記事とか
+  - 上部メニューの項目とか
+  - 各ページの文言とか
+  - ステージとかブースとか
+  - ロジックが不要な部分は可能な限りこっちに追いやれるように作ってます
+
 ## 記事を書くひと用
 ことしはGitもMarkdownもWordPressすらわからない人でもギリギリできます  
 でも英語アレルギーはさすがにダメです

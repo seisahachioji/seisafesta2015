@@ -9,24 +9,6 @@
   padding: 30px;
 }
 
-#article_base_content_wrapper {
-  margin-top: -20vh;
-}
-
-#article_base_ribbon {
-  height: 40vh;
-  position: relative;
-}
-#article_base_ribbon > *[style] {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-position: center center;
-  background-size: cover;
-}
-
 #article_base_content img[src]:not([class]) {
   display: block;
   width: 40%;

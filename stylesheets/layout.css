@@ -21,3 +21,23 @@
     overflow: visible !important;
   }
 }
+#article_base_content_wrapper,
+#index_top_wrapper {
+  margin-top: -30vh;
+}
+
+#article_base_ribbon,
+#index_ribbon {
+  height: 60vh;
+  position: relative;
+}
+#article_base_ribbon > *[style],
+#index_ribbon > *[style] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-position: center center;
+  background-size: cover;
+}

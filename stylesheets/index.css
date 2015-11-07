@@ -1,3 +1,37 @@
+#index_top_wrapper {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+#index_top_wrapper > *:not(.mdl-card) {
+  color: white;
+  text-align: center;
+}
+#index_top_wrapper .mdl-card {
+  min-height: 22.5vh;
+  width: auto;
+  height: auto;
+}
+#index_top_wrapper .mdl-card > div:not([class]) {
+  padding: 32px 24px;
+}
+
+@media (min-width: 675px) {
+  #index_ribbon .mdl-button--fab {
+    position: absolute;
+    top: auto;
+    left: auto;
+    right: 5vw;
+    bottom: 0;
+    margin-bottom: -28px;
+  }
+}
+@media (max-width: 675px) {
+  #index_ribbon .mdl-button--fab {
+    display: none;
+  }
+}
+
 .index_section .index_section_readmore {
   text-align: end;
 }

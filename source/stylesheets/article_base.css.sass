@@ -1,4 +1,4 @@
-$ribbon-height: 40vh
+@import 'init'
 
 #article_base_container
   position: relative
@@ -8,21 +8,6 @@ $ribbon-height: 40vh
 #article_base_content,
 #article_base_menu
   padding: 30px
-
-#article_base_content_wrapper
-  margin-top: -($ribbon-height / 2)
-
-#article_base_ribbon
-  height: $ribbon-height
-  position: relative
-  >*[style]
-    position: absolute
-    top: 0
-    left: 0
-    right: 0
-    bottom: 0
-    background-position: center center
-    background-size: cover
 
 #article_base_content
   img[src]:not([class])

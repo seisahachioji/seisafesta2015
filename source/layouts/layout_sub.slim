@@ -1,10 +1,5 @@
 - content_for :layout
   header.mdl-layout__header.mdl-layout__header--scroll
-    div.mdl-layout__header-row
-      span= data.static.title.global
-      div.mdl-layout-spacer
-      = partial '/partials/navigation'
-      a.mdl-button.mdl-js-button.mdl-button--icon[href="https://github.com/seisahachioji/seisafesta2015/blob/master/README.md"]
-        i.material-icons= 'code'
+    = partial '/partials/_header_inner'
   //div.mdl-layout__drawer
 = wrap_layout :layout

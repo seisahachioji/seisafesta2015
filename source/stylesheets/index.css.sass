@@ -1,3 +1,32 @@
+@import 'init'
+
+#index_top_wrapper
+  position: relative
+  margin-left: auto
+  margin-right: auto
+  >*:not(.mdl-card)
+    color: white
+    text-align: center
+  .mdl-card
+    min-height: ($ribbon-height / 4) + ($ribbon-height / 8)
+    width: auto
+    height: auto
+    >div:not([class])
+      padding: (16px * 2) (16px * 1.5)
+      text-align: center
+
+#index_ribbon
+  .mdl-button--fab
+    @media (min-width: 675px)
+      position: absolute
+      top: auto
+      left: auto
+      right: 5vw
+      bottom: 0
+      margin-bottom: -(56px / 2)
+    @media (max-width: 675px)
+      display: none
+
 .index_section
   .index_section_readmore
     text-align: end

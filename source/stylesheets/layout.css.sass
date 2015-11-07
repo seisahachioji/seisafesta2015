@@ -1,3 +1,5 @@
+@import 'init'
+
 #main
   position: relative
 
@@ -14,3 +16,21 @@
         display: none
   .mdl-layout__content
     overflow: visible !important
+
+
+#article_base_content_wrapper,
+#index_top_wrapper
+  margin-top: -($ribbon-height / 2)
+
+#article_base_ribbon,
+#index_ribbon
+  height: $ribbon-height
+  position: relative
+  >*[style]
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background-position: center center
+    background-size: cover

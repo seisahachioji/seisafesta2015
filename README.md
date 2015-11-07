@@ -18,7 +18,7 @@
 - [こ↑こ↓](http://seisahachioji.github.io/seisafesta2015/)
 
 ## 劇場版 THE CONTRIBUTORS -- 貢献者達
-記事を書いたりその他そこそこ大きく何かやってくれてるらしい人を  
+記事を書いたりその他何かやってくれてるらしい人を  
 把握してる範囲で挙げるよ
 
 - [twitter.com / Tetsuro_K1022](https://twitter.com/Tetsuro_K1022)

@@ -1,7 +1,9 @@
 # seisafesta2015
-[![Circle CI](https://circleci.com/gh/seisahachioji/seisafesta2015/tree/master.svg?style=svg)](https://circleci.com/gh/seisahachioji/seisafesta2015/tree/master)
 
-てきとう
+ちょうてきとう (でも動く)
+
+↓さいきんのビルドがおかしいと赤くなるよ  
+[![Circle CI](https://circleci.com/gh/seisahachioji/seisafesta2015/tree/master.svg?style=svg)](https://circleci.com/gh/seisahachioji/seisafesta2015/tree/master)
 
 ## とりあえずサイトを見る
 - [こ↑こ↓](http://seisahachioji.github.io/seisafesta2015/)

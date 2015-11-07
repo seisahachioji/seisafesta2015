@@ -7,10 +7,10 @@
     div
       = yield_content :stage_and_booth_content
 
-- content_for :article_base_menu
-  nav.mdl-card.mdl-shadow--2dp#stage_nav
-    div.mdl-card__media
-      = yield_content :stage_and_booth_side_media
-    ul
-      = yield_content :stage_and_booth_side_nav
+- content_for :article_base_side_media
+  = yield_content :stage_and_booth_side_media
+
+- content_for :article_base_side_nav
+  = yield_content :stage_and_booth_side_nav
+
 = wrap_layout :article_base

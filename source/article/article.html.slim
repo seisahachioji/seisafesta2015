@@ -38,3 +38,12 @@ layout: article_base
       div.mdl-card__menu
         button.mdl-button.mdl-button--icon.mdl-js-button.mdl-js-ripple-effect
           i.material-icons= "share"
+
+- content_for :article_base_side_media
+  img src=( get_static_page('news').cover.try(:[], :url) || '' )
+
+- content_for :article_base_side_nav
+  - sorted_newses.each do |news|
+    li
+      a.mdl-button.mdl-js-button.mdl-js-ripple-effect href=news_url_for(news)
+        = news.title || ''

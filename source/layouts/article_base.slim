@@ -13,6 +13,11 @@
       div.mdl-cell.mdl-cell--3-col.mdl-cell--4-col-phone
         div#article_base_menu
           = yield_content :article_base_menu
+          nav.mdl-card.mdl-shadow--2dp#stage_nav
+            div.mdl-card__media
+              = yield_content :article_base_side_media
+            ul
+              = yield_content :article_base_side_nav
       div.mdl-cell.mdl-cell--1-col.mdl-cell--hide-tablet.mdl-cell--hide-phone
     = yield_content :article_base_after
 = wrap_layout :layout_sub

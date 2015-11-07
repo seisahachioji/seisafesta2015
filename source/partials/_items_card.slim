@@ -1,5 +1,5 @@
 div.mdl-card.mdl-shadow--2dp
-  div.mdl-card__media[style=('background-image: url(%s);' % item.cover.url)]
+  div.mdl-card__media[style=('background-image: url(%s);' % item.cover.try(:[],:url))]
   div.mdl-card__title
     div.mdl-card__title-text
       h4

@@ -2,7 +2,7 @@
 layout: stage_and_booth
 ---
 - content_for :article_base_ribbon
-  div[style=('background-image: url('+stage.cover.url+');')]
+  div[style=('background-image: url(%s);' % stage.cover.try(:[],:url))]
 
 - content_for :title
   = stage.title
@@ -21,4 +21,4 @@ layout: stage_and_booth
         = stage.title
 
 - content_for :stage_and_booth_side_media
-  img src=( get_static_page('stage').cover.url )
+  img src=(get_static_page('stage').cover.try(:[],:url))

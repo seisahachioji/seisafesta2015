@@ -5,31 +5,31 @@ layout: article_base
   = stylesheet_link_tag 'article'
 
 - content_for :title
-  = article.title
+  = article.title || ''
 
 - content_for :article_base_ribbon
-  div[style=('background-image: url('+article.cover.url+');')]
+  div[style=( 'background-image: url(%s);' % article.cover.try(:[], :url) )]
 
 - content_for :article_base_content do
   article
     header
       h3
-        = article.title
-      p[style="text-align: end;", data-timestamp=article.timestamp]
-        = article.timestamp.strftime '%Y/%m/%d %H:%M'
+        = article.title || ''
+      p[style="text-align: end;"]
+        = article.timestamp.try(:strftime, '%Y/%m/%d %H:%M') || ''
     div
-      = Tilt['markdown'].new { article.body }.render
+      = Tilt['markdown'].new { article.body || '' }.render
     footer
 
 
 - content_for :article_base_menu do
   div.mdl-card.mdl-shadow--2dp
     div.mdl-card__media
-      img[src=article.author.avatar.url]
+      img[src=(article.author.avatar.try(:[], :url) || '')]
     div.mdl-card__title
-      div.mdl-card__title-text= article.author.name
+      div.mdl-card__title-text= article.author.try(:[], :name) || ''
     div.mdl-card__supporting-text
-      p= Tilt['markdown'].new { article.author.body }.render
+      p= Tilt['markdown'].new { article.author.try(:[], :body) || '' }.render
     /
       div.mdl-card__actions.mdl-card--border
         a.mdl-button.mdl-button--colored.mdl-js-button.mdl-js-ripple-effect= "hoge"

@@ -171,4 +171,9 @@ helpers do
   def sorted_stages(); get_sorted_items(data.Contentful.Stage,  'timestamp').reverse; end;
   def sorted_navs();   get_sorted_items(data.Contentful.MenuItem, 'order'); end;
 
+  def title(title = '')
+    return data.static.title.global if title.blank?
+    return '%s | %s' % [title, data.static.title.global]
+  end
+
 end

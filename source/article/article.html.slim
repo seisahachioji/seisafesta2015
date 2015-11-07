@@ -25,7 +25,7 @@ layout: article_base
 - content_for :article_base_menu do
   div.mdl-card.mdl-shadow--2dp
     div.mdl-card__media
-      img[src=(article.author.avatar.try(:[], :url) || '')]
+      img[src=(article.author.try(:[], :avatar).try(:[], :url) || '')]
     div.mdl-card__title
       div.mdl-card__title-text= article.author.try(:[], :name) || ''
     div.mdl-card__supporting-text

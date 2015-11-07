@@ -16,6 +16,21 @@
 ## とりあえずサイトを見る
 - [こ↑こ↓](http://seisahachioji.github.io/seisafesta2015/)
 
+## 劇場版 THE CONTRIBUTORS -- 貢献者達
+記事を書いたりその他そこそこ大きく何かやってくれてるらしい人を  
+把握してる範囲で挙げるよ
+
+- [twitter.com / Tetsuro_K1022](https://twitter.com/Tetsuro_K1022)
+  - レビューしたり
+  - ライター集めたり
+  - なんでもやってくれるよ
+- [twitter.com / shuma_yoshioka](https://twitter.com/shuma_yoshioka)
+  - "自分の仕事を極限まで減らす" を達成するために
+  - README.mdを充実させたり
+  - [Contentful](#ユースフルリンクス)にお金を払ったり
+  - ちょっとだけキーボードを叩いたり
+  - 方針を "てきとう" に決定したよ
+
 ## ユースフル☆リンクス
 - [gh-pages - GitHub](https://github.com/seisahachioji/seisafesta2015/commits/gh-pages)
   - サイトの変化を追えます

@@ -3,7 +3,7 @@ layout: article_base
 ---
 - content_for :head
   = stylesheet_link_tag 'article'
-  = partial '/partials/_meta_information', :locals => { :article => article, :url => 'moge' }
+  = partial '/partials/_meta_information', :locals => { :article => article }
 
 - content_for :title
   = title article.title

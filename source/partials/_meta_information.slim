@@ -6,6 +6,7 @@ ruby:
   twitter_username ||= nil
   facebook_url ||= nil
   published ||= nil
+  url ||= nil
 
   markdown = article.try(:[], :body) || item.try(:[], :body)
 

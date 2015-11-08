@@ -9,7 +9,7 @@ ruby:
 
   markdown = article.try(:[], :body) || item.try(:[], :body)
 
-  social_cover = article.try(:[], :cover).try(:[], :url) || image
+  social_cover = self.try(:image) || article.try(:[], :cover).try(:[], :url) || item.try(:[], :cover).try(:[], :url)
   social_title = article.try(:[], :title) || item.try(:[], :title) || title
   social_text  = description || content || (strip_tags Tilt['markdown'].new { markdown || '' }.render)
 

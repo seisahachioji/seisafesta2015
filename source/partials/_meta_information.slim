@@ -1,0 +1,31 @@
+ruby:
+  article ||= nil
+  item    ||= nil
+  description ||= nil
+  content ||= nil
+  twitter_username ||= nil
+  facebook_url ||= nil
+  published ||= nil
+
+  markdown = article.try(:[], :body) || item.try(:[], :body)
+
+  social_cover = article.try(:[], :cover).try(:[], :url) || image
+  social_title = article.try(:[], :title) || item.try(:[], :title) || title
+  social_text  = description || content || (strip_tags Tilt['markdown'].new { markdown || '' }.render)
+
+  twitter = {
+    :creator     => twitter_username || article.try(:[], :author).try(:[], :twitter_username) || item.try(:[], :author).try(:[], :twitter_username),
+    :title       => social_title,
+    :description => social_text,
+    :image       => social_cover
+  }
+  ogp = {
+    :title       => social_title,
+    :url         => url,
+    :image       => social_cover,
+    :description => social_text,
+    :author      => facebook_url || article.try(:[], :author).try(:[], :facebook_url) || item.try(:[], :author).try(:[], :facebook_url),
+    :published   => published || article.try(:[], :timestamp) || item.try(:[], :timestamp)
+  }
+= partial '/partials/_meta_twitter', :locals => { :locals => twitter }
+= partial '/partials/_meta_ogp',     :locals => { :locals => ogp }

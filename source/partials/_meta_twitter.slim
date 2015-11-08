@@ -1,0 +1,12 @@
+- locals.delete_if { |k, v| v.nil? }
+meta[name='twitter:card'          content='summary_large_image']
+- if locals.has_key? :site
+  meta[name='twitter:site'       content=locals[:site]]
+- if locals.has_key? :creator
+  meta[name='twitter:creator'     content=locals[:creator]]
+- if locals.has_key? :title
+  meta[name='twitter:title'       content=locals[:title]]
+- if locals.has_key? :description
+  meta[name='twitter:description' content=locals[:description]]
+- if locals.has_key? :image
+  meta[name='twitter:image'       content=locals[:image]]

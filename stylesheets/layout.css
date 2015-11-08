@@ -41,3 +41,18 @@
   background-position: center center;
   background-size: cover;
 }
+
+table:not([class]):not([id]):not([style]) {
+  border-collapse: collapse;
+}
+table:not([class]):not([id]):not([style]) th,
+table:not([class]):not([id]):not([style]) td {
+  padding: 6px 16px;
+  border: solid 1px rgba(0, 0, 0, 0.25);
+}
+table:not([class]):not([id]):not([style]) thead {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+table:not([class]):not([id]):not([style]) tbody tr:nth-child(2n) {
+  background-color: rgba(0, 0, 150, 0.025);
+}

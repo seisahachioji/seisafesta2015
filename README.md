@@ -22,9 +22,12 @@
 把握してる範囲で挙げるよ
 
 - [twitter.com / Tetsuro_K1022](https://twitter.com/Tetsuro_K1022)
-  - レビューしたり
+  - テストしたり
   - ライター集めたり
   - なんでもやってくれるよ
+- [twitter.com / brass_enohpi](https://twitter.com/brass_enohpi)
+  - ほぼ初めて使うであろうMarkdownに果敢に立ち向かい
+  - 色んな事を実験してくれてるよ
 - [twitter.com / shuma_yoshioka](https://twitter.com/shuma_yoshioka)
   - "自分の仕事を極限まで減らす" を達成するために
   - README.mdを充実させたり

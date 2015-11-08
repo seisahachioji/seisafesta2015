@@ -1,4 +1,6 @@
 ruby:
+  require 'uri'
+
   article ||= nil
   item    ||= nil
   description ||= nil
@@ -13,6 +15,15 @@ ruby:
   social_cover = self.try(:image) || article.try(:[], :cover).try(:[], :url) || item.try(:[], :cover).try(:[], :url)
   social_title = article.try(:[], :title) || item.try(:[], :title) || title
   social_text  = description || content || (strip_tags Tilt['markdown'].new { markdown || '' }.render)
+
+  if social_cover.present?
+    hoge = URI.parse social_cover
+    if hoge.scheme.blank?
+      hoge.scheme = 'http'
+    end
+    social_cover = hoge.to_s
+  end
+
 
   twitter = {
     :creator     => twitter_username || article.try(:[], :author).try(:[], :twitter_username) || item.try(:[], :author).try(:[], :twitter_username),

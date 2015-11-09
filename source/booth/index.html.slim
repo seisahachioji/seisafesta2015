@@ -2,6 +2,9 @@
 layout: items
 static_key: booth
 ---
+- content_for :head
+  = partial '/partials/_meta_information', :locals => { :item => get_static_page(current_page.data.static_key) }
+
 - content_for :items_body
   - sorted_booths.each_slice(2) do |row|
     div.mdl-grid

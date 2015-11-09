@@ -9,7 +9,7 @@
   padding: 30px;
 }
 
-#article_base_content img[src]:not([class]) {
+#article_base_content .md img[src]:not([class]) {
   display: block;
   width: 70%;
   height: auto;

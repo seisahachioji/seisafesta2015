@@ -20,7 +20,7 @@ layout: article_base
         = article.timestamp.try(:strftime, '%Y/%m/%d %H:%M') || ''
       p[style=""]
         = partial '/partials/_share_buttons', :locals => { :author => article.author }
-    div
+    div.md
       = Tilt['markdown'].new { article.body || '' }.render
     footer
 

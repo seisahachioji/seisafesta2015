@@ -16,6 +16,9 @@ layout: stage_and_booth
 - content_for :stage_and_booth_content
   = Tilt['markdown'].new { booth.body || '' }.render
 
+- content_for :article_base_menu
+  = partial '/partials/_author_card', :locals => { :author => booth.author }
+
 - content_for :stage_and_booth_side_nav
   - sorted_booths.each do |booth|
     li

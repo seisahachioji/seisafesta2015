@@ -24,21 +24,15 @@ layout: article_base
 
 
 - content_for :article_base_menu do
-  div.mdl-card.mdl-shadow--2dp
-    div.mdl-card__media
-      img[src=(article.author.try(:[], :avatar).try(:[], :url) || '')]
-    div.mdl-card__title
-      div.mdl-card__title-text= article.author.try(:[], :name) || ''
-    div.mdl-card__supporting-text
-      p= Tilt['markdown'].new { article.author.try(:[], :body) || '' }.render
-    /
-      div.mdl-card__actions.mdl-card--border
-        a.mdl-button.mdl-button--colored.mdl-js-button.mdl-js-ripple-effect= "hoge"
-        a.mdl-button.mdl-button--colored.mdl-js-button.mdl-js-ripple-effect= "fuga"
-    /
-      div.mdl-card__menu
-        button.mdl-button.mdl-button--icon.mdl-js-button.mdl-js-ripple-effect
-          i.material-icons= "share"
+  = partial '/partials/_author_card', :locals => { :author => article.author }
+  /
+    div.mdl-card__actions.mdl-card--border
+      a.mdl-button.mdl-button--colored.mdl-js-button.mdl-js-ripple-effect= "hoge"
+      a.mdl-button.mdl-button--colored.mdl-js-button.mdl-js-ripple-effect= "fuga"
+  /
+    div.mdl-card__menu
+      button.mdl-button.mdl-button--icon.mdl-js-button.mdl-js-ripple-effect
+        i.material-icons= "share"
 
 - content_for :article_base_side_media
   img src=( get_static_page('news').cover.try(:[], :url) || '' )

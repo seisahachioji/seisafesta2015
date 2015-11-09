@@ -1,0 +1,7 @@
+div.mdl-card.mdl-shadow--2dp.author_card
+  div.mdl-card__media
+    img[src=(author.try(:[], :avatar).try(:[], :url) || '')]
+  div.mdl-card__title
+    div.mdl-card__title-text= author.try(:[], :name) || ''
+  div.mdl-card__supporting-text
+    p= Tilt['markdown'].new { author.try(:[], :body) || '' }.render

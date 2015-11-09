@@ -76,3 +76,29 @@ table:not([class]):not([id]) thead {
 table:not([class]):not([id]) tbody tr:nth-child(2n) {
   background-color: rgba(0, 0, 150, 0.025);
 }
+
+.share_buttons {
+  display: block;
+  text-align: end;
+}
+.share_buttons, .share_buttons li {
+  margin: 0;
+  padding: 0;
+}
+.share_buttons {
+  margin: 4px 0;
+}
+.share_buttons li {
+  display: inline-block;
+  padding: 4px;
+  vertical-align: middle;
+  text-align: start;
+}
+.share_buttons:after {
+  display: block;
+  content: ".";
+  font-size: 0;
+  overflow: hidden;
+  width: 0;
+  height: 0;
+}

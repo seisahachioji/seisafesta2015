@@ -64,3 +64,27 @@ table:not([class]):not([id])
     tr
       &:nth-child(2n)
         background-color: rgba(0,0,150,.025)
+
+
+.share_buttons
+  display: block
+  text-align: end
+  &, & li
+    margin: 0
+    padding: 0
+  &
+    margin: 4px * 1 0
+  li
+    display: inline-block
+    //float: left
+    padding: 4px
+    vertical-align: middle
+    text-align: start
+  &:after
+    display: block
+    //clear: both
+    content: '.'
+    font-size: 0
+    overflow: hidden
+    width: 0
+    height: 0

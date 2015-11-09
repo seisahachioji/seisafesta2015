@@ -13,6 +13,10 @@ layout: stage_and_booth
 - content_for :stage_and_booth_title
   = booth.title || ''
 
+- content_for :stage_and_booth_share
+  - unless booth.try(:[], :author).nil?
+    = partial '/partials/_share_buttons', :locals => { :author => booth.author }
+
 - content_for :stage_and_booth_content
   = Tilt['markdown'].new { booth.body || '' }.render
 

@@ -18,8 +18,9 @@ layout: layout_main
     a.mdl-button.mdl-js-ripple-effect.mdl-js-button.mdl-button--fab.mdl-button--colored[href="#index_more"]
       i.material-icons= 'expand_more'
   section#index_top_wrapper.mdl-cell.mdl-cell--6-col
-    div
-      h2= about.title || ''
+    /
+      div
+        h2= about.title || ''
     div.mdl-card.mdl-shadow--2dp
       div
         = Tilt['markdown'].new { about.body || '' }.render

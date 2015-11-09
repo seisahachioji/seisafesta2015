@@ -17,19 +17,22 @@ html
       footer.mdl-mega-footer
         div.mdl-mega-footer__middle-section
           div.mdl-mega-footer__drop-down-section
-            h1.mdl-mega-footer__heading= 'News'
+            h1.mdl-mega-footer__heading
+              a[href=url_for('/article/index.html')]= 'News'
             ul.mdl-mega-footer__link-list
               - sorted_newses.each do |news|
                 li
                   a[href=news_url_for(news)]= news.title || ''
           div.mdl-mega-footer__drop-down-section
-            h1.mdl-mega-footer__heading= 'Stage'
+            h1.mdl-mega-footer__heading
+              a[href=url_for('/stage/index.html')]= 'Stage'
             ul.mdl-mega-footer__link-list
               - sorted_stages.each do |stage|
                 li
                   a[href=stage_url_for(stage)]= stage.title || ''
           div.mdl-mega-footer__drop-down-section
-            h1.mdl-mega-footer__heading= 'Booth'
+            h1.mdl-mega-footer__heading
+              a[href=url_for('/booth/index.html')]= 'Booth'
             ul.mdl-mega-footer__link-list
               - sorted_booths.each do |booth|
                 li

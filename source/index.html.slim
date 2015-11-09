@@ -36,7 +36,8 @@ layout: layout_main
       div.mdl-grid
         div.mdl-cell.mdl-cell--2-col.mdl-cell--hide-tablet.mdl-cell--hide-phone
         div.mdl-cell.mdl-cell--8-col
-          h3= section[4].try(:[], :title)
+          h3
+            a.mdl-button.mdl-js-button.mdl-js-ripple-effect[href=url_for(section[2])]= section[4].try(:[], :title)
         div.mdl-cell.mdl-cell--2-col.mdl-cell--hide-tablet.mdl-cell--hide-phone
       ruby:
         card_first_key = 0

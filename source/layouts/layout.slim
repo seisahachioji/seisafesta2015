@@ -37,6 +37,12 @@ html
               - sorted_booths.each do |booth|
                 li
                   a[href=booth_url_for(booth)]= booth.title || ''
+          div.mdl-mega-footer__drop-down-section
+            h1.mdl-mega-footer__heading= 'Links'
+            ul.mdl-mega-footer__link-list
+              - sorted_footer_links.each do |link|
+                li
+                  a[href=url_for(link.href)]= link.text || ''
         /
           div.mdl-mega-footer__bottom-section
             div.mdl-logo= 'Hoge'

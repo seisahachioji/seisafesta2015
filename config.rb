@@ -95,7 +95,8 @@ activate :contentful do |f|
     MenuItem: "1JUTVk95g0osmMMW8mI6mk",
     Stage: "Fljcnbc48eWoiIoM0MIGU",
     Booth: '3WiIXjHOtaAw6YwaA4wc4Q',
-    StaticPage: '1vjGoNSGP6eOsis8AGsCqm'
+    StaticPage: '1vjGoNSGP6eOsis8AGsCqm',
+    FooterLinkItem: '5V2esUXJfOyIMq4W8ywyUI'
   }
 end
 
@@ -170,6 +171,7 @@ helpers do
   def sorted_booths(); get_sorted_items(data.Contentful.Booth,  'timestamp').reverse; end;
   def sorted_stages(); get_sorted_items(data.Contentful.Stage,  'timestamp').reverse; end;
   def sorted_navs();   get_sorted_items(data.Contentful.MenuItem, 'order'); end;
+  def sorted_footer_links(); get_sorted_items(data.Contentful.FooterLinkItem, 'order'); end;
 
   def title(title = '')
     return data.static.title.global if title.blank?

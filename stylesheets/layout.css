@@ -42,6 +42,11 @@
   background-size: cover;
 }
 
+.mdl-mega-footer__heading a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
 table:not([class]):not([id]) {
   border-collapse: collapse;
   width: 80%;

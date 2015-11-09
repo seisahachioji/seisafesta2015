@@ -12,7 +12,7 @@
         <div class="mdl-mega-footer__middle-section">
           <div class="mdl-mega-footer__drop-down-section">
             <h1 class="mdl-mega-footer__heading">
-              News
+              <a href="../../../article/">News</a>
             </h1>
             <ul class="mdl-mega-footer__link-list">
               <li>
@@ -25,7 +25,7 @@
           </div>
           <div class="mdl-mega-footer__drop-down-section">
             <h1 class="mdl-mega-footer__heading">
-              Stage
+              <a href="../../../stage/">Stage</a>
             </h1>
             <ul class="mdl-mega-footer__link-list">
               <li>
@@ -35,7 +35,7 @@
           </div>
           <div class="mdl-mega-footer__drop-down-section">
             <h1 class="mdl-mega-footer__heading">
-              Booth
+              <a href="../../../booth/">Booth</a>
             </h1>
             <ul class="mdl-mega-footer__link-list">
               <li>

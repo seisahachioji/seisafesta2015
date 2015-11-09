@@ -43,3 +43,20 @@
   width: 100%;
   height: auto;
 }
+
+.mdl-card.author_card {
+  width: auto;
+  margin-bottom: 32px;
+}
+.mdl-card.author_card .mdl-card__title {
+  padding-bottom: 0;
+}
+.mdl-card.author_card .mdl-card__media img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.mdl-card.author_card .mdl-card__supporting-text > p {
+  padding: 0;
+  margin-bottom: 8px;
+}

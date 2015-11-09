@@ -20,6 +20,14 @@
   .mdl-layout__content {
     overflow: visible !important;
   }
+
+  .mdl-layout__header-row {
+    overflow-x: scroll;
+  }
+
+  .mdl-navigation {
+    white-space: nowrap;
+  }
 }
 #article_base_content_wrapper,
 #index_top_wrapper {

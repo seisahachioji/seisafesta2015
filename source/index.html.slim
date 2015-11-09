@@ -21,9 +21,9 @@ layout: layout_main
         = Tilt['markdown'].new { about.body || '' }.render
   ruby:
     sections = {
-      'article' => ['News',   sorted_newses, '/article/index.html', '/article/%s.html'],
-      'stage'   => ['Stages', sorted_stages, '/stage/index.html',   '/stage/%s.html'],
-      'booth'   => ['Booths', sorted_booths, '/booth/index.html',   '/booth/%s.html']
+      'article' => ['News',   sorted_newses, '/article/index.html', '/article/%s.html', get_static_page('news')],
+      'stage'   => ['Stages', sorted_stages, '/stage/index.html',   '/stage/%s.html', get_static_page('stage')],
+      'booth'   => ['Booths', sorted_booths, '/booth/index.html',   '/booth/%s.html', get_static_page('booth')]
     }
   div#index_more
   - sections.keys.each do |prefix|
@@ -32,7 +32,7 @@ layout: layout_main
       div.mdl-grid
         div.mdl-cell.mdl-cell--2-col.mdl-cell--hide-tablet.mdl-cell--hide-phone
         div.mdl-cell.mdl-cell--8-col
-          h3= section[0]
+          h3= section[4].try(:[], :title)
         div.mdl-cell.mdl-cell--2-col.mdl-cell--hide-tablet.mdl-cell--hide-phone
       ruby:
         card_first_key = 0

@@ -74,7 +74,7 @@
 でも英語アレルギーはさすがにダメです
 
 ### はじめてのかたは
-1. [@S64](github.com/S64) あたりを呼び出して
+1. [@S64](https://github.com/S64) あたりを呼び出して
 2. [Contentful](https://app.contentful.com/spaces/culruq1g10hg) の招待を受け取ってね
 3. お金はしかたないから僕が払います
 
@@ -125,5 +125,5 @@ Wercker用に書いたやつなので、このままでは動きません。
 
 ## なにかおかしくなったら
 - [@shuma_yoshioka](https://twitter.com/shuma_yoshioka) にツイートすると気分がノッてる時に読みます  
-- [New issue](../..//issues) を書いて [@S64](https://github.com/S64) 宛に送ると時間ある時に直します  
+- [New issue](../../issues) を書いて [@S64](https://github.com/S64) 宛に送ると時間ある時に直します  
 - [New pull request](../../pulls) を書いてくれたら感動します

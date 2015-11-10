@@ -1,0 +1,13 @@
+#access_wrapper .mdl-card {
+  width: auto;
+  height: auto;
+}
+#access_wrapper .mdl-card .mdl-card__supporting-text {
+  width: auto;
+}
+#access_wrapper .access_map iframe,
+#access_wrapper .bus_map iframe {
+  display: block;
+  width: 100%;
+  height: 400px;
+}

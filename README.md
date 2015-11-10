@@ -5,7 +5,7 @@
 ↓さいきんのビルドがおかしいと赤くなるよ  
 [![Circle CI](https://circleci.com/gh/seisahachioji/seisafesta2015/tree/master.svg?style=svg)](https://circleci.com/gh/seisahachioji/seisafesta2015/tree/master)
 
-↓ぐるちゃもあるよ
+↓ぐるちゃもあるよ  
 [Wantedly Sync](#ユースフルリンクス)
 
 ## どこでもドア

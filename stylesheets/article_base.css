@@ -3,6 +3,9 @@
   max-width: 1600px;
   margin: 0 auto;
 }
+#article_base_container .mdl-cell--5-col-tablet {
+  margin: 0 auto;
+}
 
 #article_base_content,
 #article_base_menu {

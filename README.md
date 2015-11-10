@@ -5,6 +5,9 @@
 ↓さいきんのビルドがおかしいと赤くなるよ  
 [![Circle CI](https://circleci.com/gh/seisahachioji/seisafesta2015/tree/master.svg?style=svg)](https://circleci.com/gh/seisahachioji/seisafesta2015/tree/master)
 
+↓ぐるちゃもあるよ
+[Wantedly Sync](#ユースフルリンクス)
+
 ## どこでもドア
 - [seisafesta2015](#seisafesta2015)
 - [とりあえずサイトを見る](#とりあえずサイトを見る)
@@ -36,6 +39,9 @@
   - 方針を "てきとう" に決定したよ
 
 ## ユースフル☆リンクス
+- [Sync by Wantedly](http://bit.ly/1MTaa0z)
+  - グループチャットです。
+  - チームコミュニケーションです。
 - [gh-pages - GitHub](https://github.com/seisahachioji/seisafesta2015/commits/gh-pages)
   - サイトの変化を追えます
 - [Circle CI](https://circleci.com/gh/seisahachioji/seisafesta2015/tree/master)

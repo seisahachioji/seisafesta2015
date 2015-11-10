@@ -42,6 +42,7 @@
 - [Sync by Wantedly](http://bit.ly/1MTaa0z)
   - グループチャットです。
   - チームコミュニケーションです。
+  - このURLをコピペしてもほかの人を招待できます → http://bit.ly/1MTaa0z
 - [gh-pages - GitHub](https://github.com/seisahachioji/seisafesta2015/commits/gh-pages)
   - サイトの変化を追えます
 - [Circle CI](https://circleci.com/gh/seisahachioji/seisafesta2015/tree/master)

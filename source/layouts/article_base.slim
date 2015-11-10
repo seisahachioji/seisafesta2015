@@ -7,10 +7,10 @@
   div#article_base_container
     div.mdl-grid
       div.mdl-cell.mdl-cell--1-col.mdl-cell--hide-tablet.mdl-cell--hide-phone
-      div.mdl-cell.mdl-cell--7-col.mdl-color--white.mdl-shadow--4dp#article_base_content_wrapper
+      div.mdl-cell.mdl-cell--7-col.mdl-color--white.mdl-shadow--4dp.mdl-cell--8-col-tablet#article_base_content_wrapper
         div#article_base_content
           = yield_content :article_base_content
-      div.mdl-cell.mdl-cell--3-col.mdl-cell--4-col-phone
+      div.mdl-cell.mdl-cell--3-col.mdl-cell--4-col-phone.mdl-cell--5-col-tablet
         div#article_base_menu
           = yield_content :article_base_menu
           nav.mdl-card.mdl-shadow--2dp#stage_nav

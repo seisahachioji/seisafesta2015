@@ -23,6 +23,8 @@ layout: article_base
     div.md
       = Tilt['markdown'].new { article.body || '' }.render
     footer
+      - footer_template = get_static_page 'news_footer'
+      = Tilt['markdown'].new { footer_template.body || '' }.render
 
 
 - content_for :article_base_menu do

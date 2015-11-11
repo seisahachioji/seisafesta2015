@@ -1,7 +1,9 @@
 ruby:
-  twitter_username = author.try(:[], :twitter_username) || ''
+  author  ||= nil
+  article ||= nil
+  twitter_username = article.try(:[], :twitter_username) || author.try(:[], :twitter_username) || ''
   if twitter_username.present?
-    twitter_username.slice! 0, 1
+    twitter_username = twitter_username.dup.gsub /^@(.+)$/, '\1'
   end
 ul.share_buttons
   li

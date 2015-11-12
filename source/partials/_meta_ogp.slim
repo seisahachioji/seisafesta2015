@@ -1,4 +1,7 @@
 - locals.delete_if { |k, v| v.nil? }
+
+meta[property='og:type'        content='article'
+
 meta[property='og:title'       content=locals[:title]]
 meta[property='og:url'         content=locals[:url]]
 meta[property='og:image'       content=locals[:image]]
@@ -6,16 +9,11 @@ meta[property='og:description' content=locals[:description]]
 /meta[property='og:locale'     content='ja_JP']
 meta[property='og:site_name'   content=title]
 
-meta[property='og:author'      content=locals[:author]]
-meta[property='article:author' content=locals[:author]]
+- if locals.has_key? :author
+  meta[property='og:author'      content=locals[:author]]
+  meta[property='article:author' content=locals[:author]]
 
 meta[property='og:publisher'      content='https://www.facebook.com/hachioji.gc']
 meta[property='article:publisher' content='https://www.facebook.com/hachioji.gc']
 
-- if locals.has_key? :published
-  - locals[:type] = 'article'
-  meta[property='article:published_time' content=locals[:published]]
-- else
-  - locals[:type] = 'website'
-
-meta[property='og:type'        content=locals[:type]]
+meta[property='article:published_time' content=locals[:published]]

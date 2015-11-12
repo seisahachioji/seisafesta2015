@@ -38,8 +38,7 @@ ruby:
     :image       => social_cover,
     :description => social_text,
     :author      => facebook_url || article.try(:[], :author).try(:[], :facebook_url) || item.try(:[], :author).try(:[], :facebook_url),
-    :published   => published || article.try(:[], :timestamp) || item.try(:[], :timestamp),
-    :admins      => []
+    :published   => published || article.try(:[], :timestamp) || item.try(:[], :timestamp)
   }
 = partial '/partials/_meta_twitter', :locals => { :locals => twitter }
 = partial '/partials/_meta_ogp',     :locals => { :locals => ogp }

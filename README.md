@@ -42,6 +42,10 @@
   - グループチャットです。
   - チームコミュニケーションです。
   - このURLをコピペしてもほかの人を招待できます → http://bit.ly/1MTaa0z
+    - ※ こういう文書も公開してるくらいなので 誰がのぞき見しにきてもいいや、と思ってURLを書いてますが  
+      入るとフツーに内部向けのグループです。  
+      チラ見しただけでも入室のログ付いちゃうので、恥ずかしい思いするかも。  
+      クリックは慎重に。
 - [gh-pages - GitHub](https://github.com/seisahachioji/seisafesta2015/commits/gh-pages)
   - サイトの変化を追えます
 - [Circle CI](https://circleci.com/gh/seisahachioji/seisafesta2015/tree/master)

@@ -27,7 +27,7 @@ ruby:
 
 
   twitter = {
-    :creator     => twitter_username || article.try(:[], :author).try(:[], :twitter_username) || item.try(:[], :author).try(:[], :twitter_username),
+    :creator     => twitter_username || article.try(:[], :twitter_username) || article.try(:[], :author).try(:[], :twitter_username) || item.try(:[], :author).try(:[], :twitter_username),
     :title       => social_title,
     :description => social_text,
     :image       => social_cover

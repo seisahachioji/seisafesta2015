@@ -16,7 +16,7 @@ layout: stage_and_booth
 
 - content_for :stage_and_booth_share
   - unless stage.try(:[], :author).nil?
-    = partial '/partials/_share_buttons', :locals => { :author => stage.author }
+    = partial '/partials/_share_buttons', :locals => { :author => stage.author, :article => stage }
 
 - content_for :stage_and_booth_content
   = Tilt['markdown'].new { stage.body || '' }.render

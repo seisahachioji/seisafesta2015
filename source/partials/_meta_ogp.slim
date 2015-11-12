@@ -16,4 +16,5 @@ meta[property='og:site_name'   content=title]
 meta[property='og:publisher'      content='https://www.facebook.com/hachioji.gc']
 meta[property='article:publisher' content='https://www.facebook.com/hachioji.gc']
 
-meta[property='article:published_time' content=locals[:published]]
+- if locals.has_key? :published
+  meta[property='article:published_time' content=locals[:published]]

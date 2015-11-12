@@ -2,7 +2,7 @@
 layout: stage_and_booth
 ---
 - content_for :head
-  = partial '/partials/_meta_information', :locals => { :article => stage }
+  = partial '/partials/_meta_information', :locals => { :article => stage, :is_featured => get_is_featured(stage) }
 
 - content_for :article_base_ribbon
   div[style=('background-image: url(%s);' % stage.cover.try(:[],:url))]

@@ -178,4 +178,14 @@ helpers do
     return '%s | %s' % [title, data.static.title.global]
   end
 
+  def get_is_featured(item)
+    if item.has_key? 'slug'
+      case item.slug
+      when sorted_newses()[0].slug, sorted_booths()[0].slug, sorted_stages()[0].slug
+        return true
+      end
+    end
+    return false
+  end
+
 end

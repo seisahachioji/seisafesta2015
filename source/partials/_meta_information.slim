@@ -10,6 +10,7 @@ ruby:
   published ||= nil
   url ||= nil
   image ||= nil
+  is_featured ||= false
 
   markdown = article.try(:[], :body) || item.try(:[], :body)
 
@@ -30,7 +31,8 @@ ruby:
     :creator     => twitter_username || article.try(:[], :twitter_username) || article.try(:[], :author).try(:[], :twitter_username) || item.try(:[], :author).try(:[], :twitter_username),
     :title       => social_title,
     :description => social_text,
-    :image       => social_cover
+    :image       => social_cover,
+    :is_featured => is_featured
   }
   ogp = {
     :title       => social_title,
@@ -38,7 +40,8 @@ ruby:
     :image       => social_cover,
     :description => social_text,
     :author      => facebook_url || article.try(:[], :author).try(:[], :facebook_url) || item.try(:[], :author).try(:[], :facebook_url),
-    :published   => published || article.try(:[], :timestamp) || item.try(:[], :timestamp)
+    :published   => published || article.try(:[], :timestamp) || item.try(:[], :timestamp),
+    :is_featured => is_featured
   }
 = partial '/partials/_meta_twitter', :locals => { :locals => twitter }
 = partial '/partials/_meta_ogp',     :locals => { :locals => ogp }

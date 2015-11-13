@@ -1,6 +1,6 @@
 require "slim"
 
-::Slim::Engine.set_options pretty: true, format: :html
+::Slim::Engine.set_options pretty: false, format: :xhtml, use_html_safe: true
 
 activate :i18n, :mount_at_root => :ja
 activate :relative_assets

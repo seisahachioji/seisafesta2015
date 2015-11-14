@@ -4,6 +4,7 @@ body
   &.onsafari
     .mdl-layout__container
       position: static !important
+  &.onios
 
 #main
   position: relative
@@ -27,9 +28,21 @@ body
     white-space: nowrap
 
 
-#article_base_content_wrapper,
-#index_top_wrapper
-  margin-top: -($ribbon-height / 2)
+body:not(.onios7)
+  #article_base_content_wrapper,
+  #index_top_wrapper
+    margin-top: -($ribbon-height / 2)
+  #article_base_ribbon,
+  #index_ribbon
+    height: $ribbon-height
+
+body.onios7
+  #article_base_content_wrapper,
+  #index_top_wrapper
+    margin-top: -($ribbon-height-fallback / 2)
+  #article_base_ribbon,
+  #index_ribbon
+    height: $ribbon-height-fallback
 
 #index_top_wrapper
   >div:not([class])
@@ -38,7 +51,6 @@ body
 
 #article_base_ribbon,
 #index_ribbon
-  height: $ribbon-height
   position: relative
   >*[style]
     position: absolute

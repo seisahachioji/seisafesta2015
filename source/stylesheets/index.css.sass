@@ -1,5 +1,14 @@
 @import 'init'
 
+body:not(.onios7)
+  #index_top_wrapper
+    .mdl-card
+      min-height: ($ribbon-height / 4) + ($ribbon-height / 8)
+body.onios7
+  #index_top_wrapper
+    .mdl-card
+      min-height: ($ribbon-height-fallback / 4) + ($ribbon-height-fallback / 8)
+
 #index_top_wrapper
   position: relative
   margin-left: auto
@@ -8,7 +17,6 @@
     color: white
     text-align: center
   .mdl-card
-    min-height: ($ribbon-height / 4) + ($ribbon-height / 8)
     width: auto
     height: auto
     >div:not([class])

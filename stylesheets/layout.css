@@ -33,9 +33,22 @@ body.onsafari .mdl-layout__container {
     white-space: nowrap;
   }
 }
-#article_base_content_wrapper,
-#index_top_wrapper {
+body:not(.onios7) #article_base_content_wrapper,
+body:not(.onios7) #index_top_wrapper {
   margin-top: -30vh;
+}
+body:not(.onios7) #article_base_ribbon,
+body:not(.onios7) #index_ribbon {
+  height: 60vh;
+}
+
+body.onios7 #article_base_content_wrapper,
+body.onios7 #index_top_wrapper {
+  margin-top: -80px;
+}
+body.onios7 #article_base_ribbon,
+body.onios7 #index_ribbon {
+  height: 160px;
 }
 
 #index_top_wrapper > div:not([class]) > h2 {
@@ -44,7 +57,6 @@ body.onsafari .mdl-layout__container {
 
 #article_base_ribbon,
 #index_ribbon {
-  height: 60vh;
   position: relative;
 }
 #article_base_ribbon > *[style],

@@ -1,3 +1,11 @@
+body:not(.onios7) #index_top_wrapper .mdl-card {
+  min-height: 22.5vh;
+}
+
+body.onios7 #index_top_wrapper .mdl-card {
+  min-height: 60px;
+}
+
 #index_top_wrapper {
   position: relative;
   margin-left: auto;
@@ -8,7 +16,6 @@
   text-align: center;
 }
 #index_top_wrapper .mdl-card {
-  min-height: 22.5vh;
   width: auto;
   height: auto;
 }

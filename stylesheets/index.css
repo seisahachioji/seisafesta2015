@@ -71,10 +71,14 @@ body.onios7 #index_top_wrapper .mdl-card {
   height: 192px;
 }
 
-#index_video iframe,
-#video_video iframe {
+#index_video iframe[allowfullscreen],
+#video_video iframe[allowfullscreen] {
   display: block;
   width: 40vw;
   height: calc( 40vw * 0.5625 );
   margin: 0 auto;
+}
+#index_video .share_buttons,
+#video_video .share_buttons {
+  text-align: center;
 }

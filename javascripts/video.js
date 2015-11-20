@@ -4,9 +4,17 @@ $(document).ready(function(){
 
   var wrp = $('#video_video');
   var iframe = $('iframe', wrp);
+  var shares = $('#video_share', wrp);
 
   $(iframe).click(function(e){
     e.stopPropagation();
+  });
+  $(shares).click(function(e){
+    e.stopPropagation();
+  });
+
+  $(wrp).click(function(e){
+    $('>a[href]', wrp)[0].click();
   });
 
 });

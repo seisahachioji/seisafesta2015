@@ -70,3 +70,11 @@ body.onios7 #index_top_wrapper .mdl-card {
 .index_big_card .mdl-card .mdl-card__media {
   height: 192px;
 }
+
+#index_video iframe,
+#video_video iframe {
+  display: block;
+  width: 40vw;
+  height: calc( 40vw * 0.5625 );
+  margin: 0 auto;
+}

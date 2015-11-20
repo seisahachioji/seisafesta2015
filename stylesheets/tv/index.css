@@ -1,0 +1,60 @@
+body,
+#wrapper,
+#wrapper #screens {
+  width: auto;
+  height: 100%;
+}
+body,
+#wrapper,
+#wrapper #screens {
+  height: 100vh;
+}
+
+#wrapper {
+  position: relative;
+}
+#wrapper #header,
+#wrapper #footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: auto;
+  bottom: auto;
+}
+#wrapper #header {
+  top: 0;
+}
+#wrapper #footer {
+  bottom: 0;
+}
+
+#video {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+#video, #video iframe {
+  transition-property: width height margin;
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
+}
+
+#wrapper:not([data-float-video]) #video {
+  margin: calc((100vh - (75vw * 0.5625)) / 2) 12.5vw;
+}
+#wrapper:not([data-float-video]) #video iframe {
+  width: 75vw;
+  height: calc(75vw * 0.5625);
+}
+#wrapper[data-float-video] #video {
+  margin-top: calc( (100vh - (25vw * 0.5625) ) - 32px );
+  margin-left: calc( (100vw - 25vw) - 32px );
+  margin-right: 32px;
+  margin-bottom: 32px;
+}
+#wrapper[data-float-video] #video iframe {
+  width: 25vw;
+  height: calc(25vw * 0.5625);
+}

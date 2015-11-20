@@ -1,0 +1,33 @@
+.mdl-layout__container {
+  z-index: 1;
+}
+
+#video_video {
+  display: block;
+  color: inherit;
+  text-decoration: inherit;
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+#video_video, #video_video iframe {
+  transition-property: background-color opacity;
+  transition-duration: 0.75s;
+  transition-timing-function: ease-out;
+}
+#video_video:not([data-show]), #video_video:not([data-show]) iframe {
+  opacity: 0;
+}
+#video_video[data-show], #video_video[data-show] iframe {
+  opacity: 1;
+}
+#video_video iframe {
+  width: 75vw;
+  height: calc( 75vw * 0.5625 );
+  margin: calc( ( 100vh - (75vw * 0.5625) ) / 2 ) auto;
+  box-shadow: 0 3px 5px black;
+}

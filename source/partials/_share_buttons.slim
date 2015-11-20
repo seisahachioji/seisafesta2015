@@ -1,16 +1,17 @@
 ruby:
   author  ||= nil
   article ||= nil
+  share_url ||= nil
   twitter_username = article.try(:[], :twitter_username) || author.try(:[], :twitter_username) || ''
   if twitter_username.present?
     twitter_username = twitter_username.dup.gsub /^@(.+)$/, '\1'
   end
 ul.share_buttons
   li
-    | <a href="https://twitter.com/share" class="twitter-share-button" data-via="#{twitter_username}" data-lang="ja">ツイート</a>
+    | <a href="https://twitter.com/share" class="twitter-share-button" data-via="#{twitter_username}" data-url="#{share_url}" data-lang="ja">ツイート</a>
       <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
   li
-    | <div class="fb-share-button" data-layout="button_count"></div>
+    | <div class="fb-share-button" data-layout="button_count" data-href="#{share_url}"></div>
   li
     | <span>
       <script type="text/javascript" src="//media.line.me/js/line-button.js?v=20140411" ></script>

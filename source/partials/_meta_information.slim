@@ -11,6 +11,7 @@ ruby:
   url ||= nil
   image ||= nil
   is_featured ||= false
+  title ||= nil
 
   markdown = article.try(:[], :body) || item.try(:[], :body)
 

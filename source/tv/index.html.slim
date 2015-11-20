@@ -1,0 +1,12 @@
+---
+layout: tv
+---
+- content_for :head
+  = stylesheet_link_tag 'tv/index.css'
+
+- content_for :body
+  div#wrapper
+    header#header
+    div#screens
+      = partial 'partials/tv/_video'
+    footer#footer

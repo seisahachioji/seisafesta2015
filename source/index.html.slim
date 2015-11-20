@@ -1,66 +1,12 @@
 ---
-layout: layout_main
+layout: index
 ---
 - about = get_static_page 'about'
 
-- content_for :title
-  = title
-
-- content_for :head
-  = stylesheet_link_tag 'index'
+- content_for :index_head
   ruby:
     description = strip_tags Tilt['markdown'].new { about.body }.render
   = partial '/partials/_meta_information', :locals => { :image => about.cover.url, :description => description }
 
-- content_for :content
-  div#index_ribbon.mdl-color--primary-dark
-    div[style=("background-image: url(%s)" % about.cover.try(:[], :url) || '')]
-    a.mdl-button.mdl-js-ripple-effect.mdl-js-button.mdl-button--fab.mdl-button--colored[href="#index_more"]
-      i.material-icons= 'expand_more'
-  section#index_top_wrapper.mdl-cell.mdl-cell--6-col
-    /
-      div
-        h2= about.title || ''
-    div.mdl-card.mdl-shadow--2dp
-      div
-        = Tilt['markdown'].new { about.body || '' }.render
-  ruby:
-    sections = {
-      'article' => ['News',   sorted_newses, '/article/index.html', '/article/%s.html', get_static_page('news')],
-      'stage'   => ['Stages', sorted_stages, '/stage/index.html',   '/stage/%s.html', get_static_page('stage')],
-      'booth'   => ['Booths', sorted_booths, '/booth/index.html',   '/booth/%s.html', get_static_page('booth')]
-    }
-  div#index_more
-  - sections.keys.each do |prefix|
-    - section = sections[prefix]
-    section.index_section
-      div.mdl-grid
-        div.mdl-cell.mdl-cell--2-col.mdl-cell--hide-tablet.mdl-cell--hide-phone
-        div.mdl-cell.mdl-cell--8-col
-          h3
-            a.mdl-button.mdl-js-button.mdl-js-ripple-effect[href=url_for(section[2])]= section[4].try(:[], :title)
-        div.mdl-cell.mdl-cell--2-col.mdl-cell--hide-tablet.mdl-cell--hide-phone
-      ruby:
-        card_first_key = 0
-        items = section[1].slice 0, ( prefix == 'article' ? 5 : 4 )
-      - if items.length > 4
-        div.mdl-grid.index_big_card
-          div.mdl-cell.mdl-cell--3-col.mdl-cell--hide-tablet.mdl-cell--hide-phone
-          div.mdl-cell.mdl-cell--6-col
-            = partial '/partials/_index_card', :locals => { :item => items[0], :section => section, :prefix => prefix }
-          div.mdl-cell.mdl-cell--3-col.mdl-cell--hide-tablet.mdl-cell--hide-phone
-      div.mdl-grid
-        div.mdl-cell.mdl-cell--2-col.mdl-cell--hide-tablet.mdl-cell--hide-phone
-        - items.each_with_index do |item, idx|
-          - next if items.length > 4 && idx == 0
-          div.mdl-cell.mdl-cell--2-col.mdl-cell--4-col-phone.mdl-cell--5-col-tablet
-            = partial '/partials/_index_card', :locals => { :item => item, :section => section, :prefix => prefix }
-        div.mdl-cell.mdl-cell--2-col.mdl-cell--hide-tablet.mdl-cell--hide-phone
-      div.mdl-grid
-        div.mdl-cell.mdl-cell--2-col.mdl-cell--hide-tablet.mdl-cell--hide-phone
-        div.mdl-cell.mdl-cell--4-col
-        div.mdl-cell.mdl-cell--4-col.index_section_readmore
-          a.mdl-button.mdl-js-button.mdl-button--primary.mdl-js-ripple-effect[href=url_for(section[2])]
-            span= 'READ MORE (%d)' % section[1].length
-            i.material-icons= 'navigate_next'
-        div.mdl-cell.mdl-cell--2-col.mdl-cell--hide-tablet.mdl-cell--hide-phone
+- content_for :index_video
+  iframe[src='https://www.youtube.com/embed/Wjua3JUo_EE?rel=0&showinfo=0' frameborder='0' allowfullscreen]

@@ -1,0 +1,14 @@
+---
+layout: index
+---
+- about = get_static_page 'about'
+
+- content_for :index_head
+  = partial '/partials/_meta_information', :locals => { :title => title('PR映像'), :description => '今年もやってくる SEISA FESTA 2015! PR映像を制作しました。', :image => about.cover.url }
+  meta name='robots' content='noindex, follow'
+  = stylesheet_link_tag 'video.css'
+  = javascript_include_tag 'https://www.youtube.com/iframe_api', 'video.js'
+
+- content_for :body_after
+  a#video_video[href=url_for('/index.html')]
+    iframe#video_lp[src='https://www.youtube.com/embed/Wjua3JUo_EE?rel=0&controls=0&showinfo=0&autoplay=0&enablejsapi=1' frameborder='0' allowfullscreen]

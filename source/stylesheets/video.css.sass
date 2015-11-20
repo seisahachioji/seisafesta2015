@@ -1,0 +1,30 @@
+.mdl-layout__container
+  //position: relative
+  z-index: 1
+#video_video
+  display: block
+  color: inherit
+  text-decoration: inherit
+  z-index: 9999
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  background-color: rgba(0, 0, 0, .75)
+  &,
+  & iframe
+    transition-property: background-color opacity
+    transition-duration: .75s
+    transition-timing-function: ease-out
+  &:not([data-show])
+    &, & iframe
+      opacity: 0
+  &[data-show]
+    &, & iframe
+      opacity: 1
+  iframe
+    width: 75vw
+    height: calc( 75vw * 0.5625 )
+    margin: calc( ( 100vh - (75vw * 0.5625) ) / 2 ) auto
+    box-shadow: 0 3px 5px black

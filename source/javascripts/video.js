@@ -4,7 +4,7 @@ $(document).ready(function(){
 
   var wrp = $('#video_video');
   var iframe = $('iframe', wrp);
-  var shares = $('#video_share', wrp);
+  var shares = $('#video_share li', wrp);
 
   $(iframe).click(function(e){
     e.stopPropagation();
